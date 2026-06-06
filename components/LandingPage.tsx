@@ -1,41 +1,42 @@
 "use client";
 
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion, useInView, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
+import { useLenis } from "lenis/react";
 import {
   Leaf, ShieldCheck, Factory, Phone, Mail, ArrowRight,
   Star, Droplets, Recycle, Award, ChevronLeft, ChevronRight,
-  FlaskConical, Globe, Zap
+  FlaskConical, Globe, Zap, Building2, Users, Hospital, Utensils, Lightbulb, Quote
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
-import { HeroScene } from "./HeroScene";
 import { products } from "@/lib/products";
 
-const ECO_QUOTES = [
+const CORE_VALUES = [
   {
-    quote: "The Earth does not belong to us. We belong to the Earth.",
-    author: "Chief Seattle",
-    icon: "🌍"
+    quote: "Protecting against Bacterial & Viral Infections with Human Safe Disinfectants with FDA approved efficacy.",
+    author: "Infection Protection",
+    icon: ShieldCheck
   },
   {
-    quote: "We do not inherit the earth from our ancestors; we borrow it from our children.",
-    author: "Native American Proverb",
-    icon: "🌱"
+    quote: "Readily Biodegradable Ingredients, Free from Phosphates, Inorganic Acids, APE, and EDTA. Ensuring world leading safety of water bodies.",
+    author: "Environmental Safety",
+    icon: Globe
   },
   {
-    quote: "In every walk with nature, one receives far more than he seeks.",
-    author: "John Muir",
-    icon: "🍃"
+    quote: "Improving Air Quality and ensuring Food safety as per US FDA GRAS. All touch surfaces remain free from toxic chemicals.",
+    author: "People Safety Above All",
+    icon: Users
   },
   {
-    quote: "The greatest threat to our planet is the belief that someone else will save it.",
-    author: "Robert Swan",
-    icon: "♻️"
+    quote: "Soda Free Laundry, Silicate Free Machine wash, and pH Neutral Non Strip Cleaners ensure extended life of your valuable assets.",
+    author: "Long Life of Assets",
+    icon: Building2
   },
   {
-    quote: "Sustainability is not a destination. It is a way of thinking and acting.",
-    author: "Mamta Associates",
-    icon: "💚"
+    quote: "Resource, Manpower, Water, time & Electricity saving in Laundry, F&B, Dairy and allied Industries.",
+    author: "Resource & Cost Efficiency",
+    icon: Lightbulb
   }
 ];
 
@@ -116,14 +117,14 @@ function QuoteCarousel() {
   useEffect(() => {
     const timer = setInterval(() => {
       setDirection(1);
-      setIndex((prev) => (prev + 1) % ECO_QUOTES.length);
+      setIndex((prev) => (prev + 1) % CORE_VALUES.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   function goTo(next: number, dir: number) {
     setDirection(dir);
-    setIndex((next + ECO_QUOTES.length) % ECO_QUOTES.length);
+    setIndex((next + CORE_VALUES.length) % CORE_VALUES.length);
   }
 
   const variants = {
@@ -165,19 +166,24 @@ function QuoteCarousel() {
             transition={{ duration: 0.45, ease: "easeInOut" }}
             className="text-center"
           >
-            <p className="mb-3 text-4xl">{ECO_QUOTES[index].icon}</p>
-            <blockquote className="text-lg font-medium italic leading-8 text-white sm:text-xl">
-              &ldquo;{ECO_QUOTES[index].quote}&rdquo;
-            </blockquote>
+            <div className="mb-4 flex justify-center text-emerald-400">
+              {(() => {
+                const Icon = CORE_VALUES[index].icon;
+                return <Icon className="h-10 w-10" />;
+              })()}
+            </div>
+            <p className="text-lg font-medium leading-8 text-white sm:text-xl">
+              {CORE_VALUES[index].quote}
+            </p>
             <p className="mt-4 text-sm font-semibold uppercase tracking-widest text-emerald-200">
-              — {ECO_QUOTES[index].author}
+              — {CORE_VALUES[index].author}
             </p>
           </motion.div>
         </AnimatePresence>
       </div>
 
       <div className="mt-6 flex justify-center gap-2">
-        {ECO_QUOTES.map((_, i) => (
+        {CORE_VALUES.map((_, i) => (
           <button
             key={i}
             onClick={() => goTo(i, i > index ? 1 : -1)}
@@ -256,7 +262,7 @@ function ProductCard({
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55, delay: index * 0.08, ease: "easeOut" }}
-      className={`group rounded-[1.75rem] border border-emerald-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lift ${
+      className={`group rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lift ${
         index === 0 ? "lg:col-span-2" : ""
       }`}
     >
@@ -282,7 +288,7 @@ function ProductCard({
 
       <div className="mt-6 h-px bg-gradient-to-r from-emerald-100 via-slate-200 to-transparent" />
       <p className="mt-4 text-sm font-medium text-slate-700 transition group-hover:text-forest">
-        Built for real facility workflows, not just a nice-looking shelf.
+        Rigorously tested to meet and exceed global compliance standards.
       </p>
     </motion.article>
   );
@@ -291,143 +297,151 @@ function ProductCard({
 export function LandingPage() {
   const statsRef = useRef<HTMLElement>(null);
   const statsInView = useInView(statsRef, { once: true, margin: "-80px" });
+  
+  const scrollY = useMotionValue(0);
+  useLenis((e) => {
+    scrollY.set(e.scroll);
+  });
+  
+  const heroTextY = useTransform(scrollY, [0, 1000], [0, 150]);
+  const heroCardsY = useTransform(scrollY, [0, 1000], [0, -100]);
 
   return (
     <main className="bg-slatewash">
-      {/* ── NAV ── */}
-      <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between border-b border-white/10 bg-forest/90 px-5 py-3 backdrop-blur-md sm:px-8">
-        <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-forest">
-            <Leaf className="h-5 w-5" />
-          </div>
-          <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-emerald-100">MAMTA ASSOCIATES</p>
-            <p className="hidden text-[10px] text-emerald-50/70 sm:block">Green Cleaning Technology</p>
-          </div>
-        </div>
-        <div className="flex items-center gap-3">
-          <a href="#features" className="hidden text-sm font-medium text-emerald-100 transition hover:text-white sm:block">
-            Features
-          </a>
-          <a href="#about" className="hidden text-sm font-medium text-emerald-100 transition hover:text-white sm:block">
-            About
-          </a>
-          <Link
-            href="/catalog"
-            className="inline-flex items-center gap-2 rounded-lg bg-mint px-4 py-2 text-sm font-semibold text-forest shadow-sm transition hover:bg-emerald-400"
-          >
-            View Catalog
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </nav>
+
 
       {/* ── HERO ── */}
-      <section className="relative min-h-screen overflow-hidden bg-forest pt-16 text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,197,94,0.18),transparent_26%),radial-gradient(circle_at_85%_15%,rgba(255,255,255,0.11),transparent_18%),linear-gradient(115deg,rgba(0,77,64,1)_0%,rgba(11,102,70,0.92)_43%,rgba(4,120,87,0.76)_100%)]" />
-        <div className="absolute inset-0 opacity-18 [background-image:linear-gradient(rgba(255,255,255,0.11)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.11)_1px,transparent_1px)] [background-size:42px_42px]" />
-        <div className="absolute right-[-8rem] top-20 h-[24rem] w-[24rem] rounded-full bg-mint/10 blur-3xl" />
-        <div className="absolute bottom-[-10rem] left-[-7rem] h-[20rem] w-[20rem] rounded-full bg-white/10 blur-3xl" />
-
-        <div className="relative z-10 grid min-h-[calc(100vh-4rem)] grid-cols-1 items-center gap-10 px-5 py-10 sm:px-8 lg:grid-cols-[1fr_1.02fr] lg:px-12 xl:px-20">
+      <section className="relative min-h-screen bg-slate-50 pt-20 border-b border-slate-200">
+        <div className="relative z-10 mx-auto max-w-7xl grid min-h-[calc(100vh-5rem)] grid-cols-1 items-center gap-12 px-5 py-10 sm:px-8 lg:grid-cols-2 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: "easeOut" }}
-            className="max-w-3xl"
+            style={{ y: heroTextY }}
+            className="max-w-2xl"
           >
-            <div className="mb-7 inline-flex items-center gap-4 rounded-full border border-white/15 bg-white/8 px-4 py-2 backdrop-blur-md">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-forest">
-                <Leaf className="h-6 w-6" />
-              </div>
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.28em] text-emerald-100">MAMTA ASSOCIATES</p>
-                <p className="text-sm text-emerald-50/80">A small catalogue with a very specific job</p>
-              </div>
+            <div className="mb-7 inline-flex items-center gap-3 rounded-md border border-emerald-200 bg-emerald-50 px-4 py-2">
+              <Leaf className="h-5 w-5 text-forest" />
+              <p className="text-sm font-semibold uppercase tracking-wider text-forest">Quality assured by specialists</p>
             </div>
 
-            <h1 className="max-w-3xl text-5xl font-bold leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl">
-              Cleaning chemistry
+            <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
+              World-Class
               <br />
-              that has to hold up
+              High Performance
               <br />
-              <span className="text-mint">in the real world.</span>
+              <span className="text-forest">Green Cleaning.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-emerald-50/88">
-              We make hospital, kitchen, laundry, washroom, and industrial products for teams that care about what happens after the brochure ends - the wipe-down, the rinse, the audit, the next shift.
+            <p className="mt-6 text-lg leading-8 text-slate-600">
+              Manufacturing over 90 specialty products for Housekeeping, Infection Control, Medical, Food-Pharma, and Laundry. Delivering FDA-licensed efficacy with uncompromising environmental safety.
             </p>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
               {[
-                "Built for procurement, ops, and compliance",
-                "No perfume-first shortcuts",
-                "GreenPro, FDA, WHO-GMP"
+                "ISO 9001:2008 WHO-GMP",
+                "US FDA GRAS Listed",
+                "Meet NABH Standards"
               ].map((item) => (
-                <div key={item} className="rounded-2xl border border-white/15 bg-white/8 px-4 py-3 text-sm text-emerald-50/92 backdrop-blur-md">
+                <div key={item} className="flex items-center gap-2 rounded-md border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm">
+                  <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
                   {item}
                 </div>
-              ))}
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              {BADGES.map((badge) => (
-                <span key={badge} className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/12 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md">
-                  <ShieldCheck className="h-4 w-4 text-mint" />
-                  {badge}
-                </span>
               ))}
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/catalog"
-                className="inline-flex items-center gap-2 rounded-xl bg-mint px-7 py-3.5 text-base font-bold text-forest shadow-lift transition hover:bg-emerald-400 hover:scale-105"
+                className="inline-flex items-center gap-2 rounded-md bg-forest px-8 py-4 text-base font-bold text-white shadow-md transition hover:bg-canopy"
               >
-                See the catalog
+                View Product Catalog
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <a
                 href="#features"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
+                className="inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-8 py-4 text-base font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50"
               >
-                What makes it different
+                Corporate Profile
               </a>
             </div>
 
-            <div className="mt-10 grid gap-3 text-sm text-emerald-50 sm:grid-cols-3">
-              <span className="flex items-center gap-2"><Phone className="h-4 w-4 text-mint" /> +91 98200 00000</span>
-              <span className="flex items-center gap-2"><Mail className="h-4 w-4 text-mint" /> support@mamtaassociates.in</span>
-              <span className="flex items-center gap-2"><Factory className="h-4 w-4 text-mint" /> India manufacturing, global supply</span>
+            <div className="mt-10 grid gap-3 text-sm text-slate-500 sm:grid-cols-3">
+              <span className="flex items-center gap-2"><Phone className="h-4 w-4 text-emerald-600" /> +91 98200 00000</span>
+              <span className="flex items-center gap-2"><Mail className="h-4 w-4 text-emerald-600" /> support@mamtaassociates.in</span>
+              <span className="flex items-center gap-2"><Factory className="h-4 w-4 text-emerald-600" /> India manufacturing</span>
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.85, ease: "easeOut", delay: 0.15 }}
-            className="relative min-h-[560px] overflow-hidden rounded-[2rem] border border-white/14 bg-white/8 shadow-2xl backdrop-blur-sm"
-          >
-            <HeroScene />
-            <div className="absolute left-6 top-6 max-w-[230px] rounded-2xl border border-white/24 bg-white/14 p-4 shadow-lift backdrop-blur-md">
-              <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-emerald-100">Field note</p>
-              <p className="mt-2 text-sm leading-6 text-white/90">
-                The first thing customers notice is not the claim. It&apos;s that the product behaves the same at the bench, on site, and in procurement.
-              </p>
+          <motion.div style={{ y: heroCardsY }} className="relative grid grid-cols-2 gap-4 lg:gap-6 h-full min-h-[480px]">
+            {/* Card A: Product Showcase */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="col-span-2 sm:col-span-1 rounded-xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-center items-center"
+            >
+              <div className="relative w-full aspect-square max-w-[220px]">
+                <Image 
+                  src="/images/laundroclean.png" 
+                  alt="Product Showcase" 
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <p className="mt-6 text-xs font-bold uppercase tracking-widest text-slate-400">Flagship Formula</p>
+            </motion.div>
+
+            <div className="col-span-2 sm:col-span-1 flex flex-col gap-4 lg:gap-6">
+              {/* Card B: Legacy */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="flex-1 rounded-xl border border-slate-200 bg-forest p-6 shadow-sm flex flex-col justify-center text-white"
+              >
+                <Award className="h-8 w-8 text-emerald-300 mb-4" />
+                <p className="text-3xl font-bold tracking-tight">22+ Years</p>
+                <p className="mt-2 text-sm text-emerald-100/90 leading-relaxed">
+                  Of uncompromising quality and GreenPro certified chemical engineering.
+                </p>
+              </motion.div>
+
+              {/* Card C: Products */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex-1 rounded-xl border border-emerald-100 bg-emerald-50 p-6 shadow-sm flex flex-col justify-center"
+              >
+                <FlaskConical className="h-8 w-8 text-emerald-600 mb-4" />
+                <p className="text-2xl font-bold text-slate-900 tracking-tight">60+ Products</p>
+                <p className="mt-1 text-sm text-slate-600 font-medium">Specialty formulations</p>
+              </motion.div>
             </div>
-            <div className="absolute inset-x-6 bottom-6 rounded-[1.5rem] border border-white/24 bg-white/18 p-5 shadow-lift backdrop-blur-md sm:left-auto sm:right-8 sm:w-[360px]">
-              <div className="flex items-center gap-4">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-100 to-white text-xl font-bold text-forest shadow-lg">
-                  1979
+
+            {/* Card D: Full width Trust Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="col-span-2 rounded-xl border border-slate-200 bg-white p-6 shadow-sm flex flex-wrap items-center justify-between gap-6"
+            >
+              <div>
+                <p className="text-sm font-bold text-slate-900">Globally Certified Standards</p>
+                <p className="text-xs text-slate-500 mt-1">Manufactured under WHO-GMP guidelines</p>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-50 border border-slate-100">
+                  <ShieldCheck className="h-6 w-6 text-emerald-600" />
                 </div>
-                <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-emerald-100">Made in India</p>
-                  <h2 className="mt-0.5 text-lg font-bold text-white">Mamta Associates</h2>
-                  <p className="mt-1.5 text-sm leading-5 text-emerald-50/88">
-                    Practical green chemistry for healthcare, food zones, laundry rooms, and hard-working floors.
-                  </p>
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-50 border border-slate-100">
+                  <Globe className="h-6 w-6 text-emerald-600" />
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-50 border border-slate-100">
+                  <Leaf className="h-6 w-6 text-emerald-600" />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -443,11 +457,11 @@ export function LandingPage() {
             className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between"
           >
             <div>
-              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-canopy">Catalog snapshot</p>
-              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">A few products, shown the way buyers actually read them.</h2>
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-canopy">Our Core Solutions</p>
+              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Engineered for Specific Industrial Applications.</h2>
             </div>
             <p className="max-w-2xl text-sm leading-6 text-slate-500">
-              The catalog is built around real buying decisions: what zone it belongs in, what it replaces, and what it needs to survive in the field.
+              Our complete range is designed for critical hygiene needs, reducing inventory and training costs while ensuring resource, manpower, and utility savings.
             </p>
           </motion.div>
 
@@ -469,10 +483,10 @@ export function LandingPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="mb-2 text-center text-xs font-bold uppercase tracking-widest text-emerald-300">
-              Sustainability notes
+              Our Commitment
             </p>
             <h2 className="mb-8 text-center text-2xl font-bold text-white sm:text-3xl">
-              Why the catalog exists
+              The Mamta Associates Promise
             </h2>
             <QuoteCarousel />
           </motion.div>
@@ -509,12 +523,12 @@ export function LandingPage() {
             transition={{ duration: 0.55 }}
             className="mb-12 text-center"
           >
-            <p className="mb-2 text-xs font-bold uppercase tracking-widest text-canopy">Why people buy it</p>
+            <p className="mb-2 text-xs font-bold uppercase tracking-widest text-canopy">The Mamta Associates Advantage</p>
             <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-              Science-backed, but written for human beings.
+              Engineered for Operational Excellence.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-slate-500">
-              Every formula is engineered to deliver professional-grade cleaning performance while protecting people, surfaces, and the environment. The difference is in the details: dilution, dwell time, compatibility, and what gets left behind.
+              Every formula is rigorously tested to deliver professional-grade cleaning performance while protecting people, surfaces, and the environment. Uncompromising efficacy meets independently verified environmental safety.
             </p>
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-12">
@@ -537,16 +551,16 @@ export function LandingPage() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.65 }}
             >
-              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-canopy">Our promise</p>
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-canopy">Our Philosophy</p>
               <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-                Safe enough for the audit.
-                <br />Strong enough for the job.
+                Uncompromising Performance.
+                <br />Certified Safety.
               </h2>
               <p className="mt-5 text-base leading-7 text-slate-500">
-                Mamta Associates was founded on the belief that industrial cleaning doesn&apos;t have to come at the cost of environmental health. Every product in our catalog is formulated to be as safe for the planet as it is effective for your facility.
+                Mamta Associates leads the industry with formulations that ensure world-class efficacy without compromising environmental or human health. Our innovative products are driven by a commitment to true green chemistry.
               </p>
               <p className="mt-4 text-base leading-7 text-slate-500">
-                From hospital-grade disinfectants to food-safe kitchen degreasers, our chemistry is built on biodegradable surfactants, enzyme systems, and GRAS-compliant actives — with zero compromise on performance.
+                From FDA-licensed hospital-grade disinfectants to US FDA GRAS-compliant kitchen degreasers, our chemistry relies on readily biodegradable surfactants and advanced enzyme systems to deliver exceptional results.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 {["GreenPro Certified", "STP Safe", "FDA Licensed", "WHO-GMP Following"].map((badge) => (
@@ -566,10 +580,10 @@ export function LandingPage() {
               className="grid gap-4 sm:grid-cols-2"
             >
               {[
-                { icon: "🏥", title: "Hospital Grade", desc: "Broad-spectrum disinfection meeting healthcare facility standards." },
-                { icon: "🍽️", title: "Food Safe", desc: "US FDA GRAS compliant formulas for food preparation zones." },
-                { icon: "🏭", title: "Industrial Strength", desc: "Heavy-duty degreasing without petrochemical solvents." },
-                { icon: "🌿", title: "Eco Certified", desc: "Independently verified biodegradable and aquatic-safe chemistry." }
+                { icon: <Hospital className="h-8 w-8 text-emerald-600" />, title: "Hospital Grade", desc: "Broad-spectrum disinfection meeting healthcare facility standards." },
+                { icon: <Utensils className="h-8 w-8 text-emerald-600" />, title: "Food Safe", desc: "US FDA GRAS compliant formulas for food preparation zones." },
+                { icon: <Factory className="h-8 w-8 text-emerald-600" />, title: "Industrial Strength", desc: "Heavy-duty degreasing without petrochemical solvents." },
+                { icon: <Leaf className="h-8 w-8 text-emerald-600" />, title: "Eco Certified", desc: "Independently verified biodegradable and aquatic-safe chemistry." }
               ].map((item, i) => (
                 <motion.div
                   key={item.title}
@@ -577,13 +591,61 @@ export function LandingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className={`rounded-2xl border border-emerald-100 bg-white p-5 shadow-sm ${i === 0 ? "sm:translate-y-2" : i === 3 ? "sm:-translate-y-2" : ""}`}
+                  className={`rounded-xl border border-emerald-100 bg-white p-5 shadow-sm ${i === 0 ? "sm:translate-y-2" : i === 3 ? "sm:-translate-y-2" : ""}`}
                 >
-                  <p className="mb-2 text-3xl">{item.icon}</p>
+                  <div className="mb-4">{item.icon}</div>
                   <h3 className="font-semibold text-slate-900">{item.title}</h3>
                   <p className="mt-1 text-sm text-slate-500">{item.desc}</p>
                 </motion.div>
               ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── MESSAGE FROM PROPRIETOR ── */}
+      <section className="bg-slate-50 py-20 px-5 sm:px-8 border-t border-slate-200">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-12 lg:grid-cols-[1fr_2fr] items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative w-full aspect-[4/5] max-w-sm mx-auto rounded-xl overflow-hidden shadow-xl"
+            >
+              <Image 
+                src="/images/founder.jpeg"
+                alt="Founder & Proprietor"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Quote className="h-12 w-12 text-emerald-200 mb-6" />
+              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-6">
+                A Legacy of Uncompromising Quality
+              </h2>
+              <div className="space-y-4 text-lg text-slate-600">
+                <p>
+                  Since 1979, Mamta Associates has been built on a singular vision: providing industrial and commercial facilities with cleaning technology that performs without compromise. 
+                </p>
+                <p>
+                  We recognized early on that true efficiency doesn't come from taking shortcuts. It comes from advanced green chemistry, rigorous testing, and a deep understanding of real-world operational challenges.
+                </p>
+                <p>
+                  Today, as a leading provider of GreenPro certified cleaning chemicals, our commitment remains unchanged. We deliver hospital-grade disinfection, food-safe hygiene, and industrial strength cleaning while protecting our people, our water bodies, and our planet.
+                </p>
+              </div>
+              <div className="mt-8">
+                <p className="text-xl font-bold text-forest">Founder & Proprietor</p>
+                <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600 mt-1">Mamta Associates</p>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -603,26 +665,26 @@ export function LandingPage() {
               Trusted by hospitals, hotels, and industrial facilities across India
             </div>
             <h2 className="text-4xl font-bold text-white sm:text-5xl">
-              Ready to build a cleaner, calmer ops stack?
+              Partner with us for a sustainable operational ecosystem.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-lg text-emerald-50/85">
-              Browse our full catalog of eco-certified cleaning chemistry. Filter by category, application, and certifications to find the right product for your facility.
+              Explore our complete range of high-performance green cleaning chemistry. Discover solutions engineered for maximum efficacy, compliance, and environmental responsibility.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
                 href="/catalog"
-                className="inline-flex items-center gap-2 rounded-xl bg-mint px-8 py-4 text-base font-bold text-forest shadow-lift transition hover:bg-emerald-400 hover:scale-105"
+                className="inline-flex items-center gap-2 rounded-md bg-white px-8 py-4 text-base font-bold text-forest shadow-md transition hover:bg-slate-50 hover:scale-105"
               >
                 Browse Product Catalog
                 <ArrowRight className="h-5 w-5" />
               </Link>
-              <a
-                href="mailto:support@mamtaassociates.in"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-transparent px-8 py-4 text-base font-semibold text-white transition hover:bg-white/10"
               >
                 <Mail className="h-5 w-5" />
                 Contact Us
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

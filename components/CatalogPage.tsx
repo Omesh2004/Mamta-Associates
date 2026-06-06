@@ -8,37 +8,7 @@ import { ProductCatalog } from "./ProductCatalog";
 export function CatalogPage() {
   return (
     <main className="min-h-screen bg-slatewash">
-      {/* ── NAV ── */}
-      <nav className="sticky top-0 z-40 flex items-center justify-between border-b border-white/10 bg-forest/95 px-5 py-3 backdrop-blur-md sm:px-8">
-        <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-forest">
-            <Leaf className="h-5 w-5" />
-          </div>
-          <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-emerald-100">MAMTA ASSOCIATES</p>
-            <p className="hidden text-[10px] text-emerald-50/70 sm:block">Green Cleaning Technology</p>
-          </div>
-        </div>
 
-        <div className="flex items-center gap-4">
-          <div className="hidden items-center gap-3 sm:flex">
-            {["GreenPro Certified", "FDA Licensed"].map((badge) => (
-              <span key={badge} className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold text-white">
-                <ShieldCheck className="h-3.5 w-3.5 text-mint" />
-                {badge}
-              </span>
-            ))}
-          </div>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            <span className="hidden sm:inline">Back to Home</span>
-            <span className="sm:hidden">Home</span>
-          </Link>
-        </div>
-      </nav>
 
       {/* ── PAGE HEADER ── */}
       <div className="bg-forest px-5 py-10 sm:px-8">
@@ -57,6 +27,41 @@ export function CatalogPage() {
             <p className="mt-3 max-w-2xl text-base text-emerald-50/80">
               Browse our full range of green cleaning products. Filter by category, application, and certifications to find the right solution for your facility.
             </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3 border-t border-white/20 pt-8">
+              <a
+                href="/resources/Haylide - Laundry Brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-md bg-white/10 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/20 border border-white/10"
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-sm bg-mint text-forest">
+                  <ShieldCheck className="h-4 w-4" />
+                </div>
+                Laundry Division Catalog
+              </a>
+              <a
+                href="/resources/Haylide Food Hygiene Brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-md bg-white/10 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/20 border border-white/10"
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-sm bg-mint text-forest">
+                  <ShieldCheck className="h-4 w-4" />
+                </div>
+                Food Hygiene Catalog
+              </a>
+              <a
+                href="/resources/Haylide Hospital Brochure 2024.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-md bg-white/10 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/20 border border-white/10"
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-sm bg-mint text-forest">
+                  <ShieldCheck className="h-4 w-4" />
+                </div>
+                Hospital Division Catalog
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
