@@ -177,17 +177,15 @@ export default function AdminPage() {
       setError("");
       setMessage("");
       
-      const formData = new FormData();
-      formData.append("file", selectedFile);
       try {
-        const uploadRes = await fetch("/api/admin/upload", {
+        const uploadRes = await fetch(`/api/admin/upload?filename=${encodeURIComponent(selectedFile.name)}`, {
           method: "POST",
-          body: formData
+          body: selectedFile,
         });
         
         if (!uploadRes.ok) {
           const uploadData = await uploadRes.json();
-          setError(uploadData.error || "Failed to upload image.");
+          setError(uploadData.details ? `${uploadData.error} Details: ${uploadData.details}` : uploadData.error || "Failed to upload image.");
           setIsSaving(false);
           return;
         }
@@ -243,20 +241,20 @@ export default function AdminPage() {
   if (!session) return null;
 
   return (
-    <div className="min-h-screen bg-slatewash">
-      <header className="border-b border-slate-200 bg-white">
+    <div className="min-h-screen bg-slatewash dark:bg-slate-950 transition-colors duration-500">
+      <header className="border-b border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/50 backdrop-blur-md transition-colors duration-500">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center">
             <LayoutDashboard className="mr-2 h-6 w-6 text-forest" />
-            <h1 className="text-xl font-bold text-slate-900">Admin Dashboard</h1>
+            <h1 className="text-xl font-bold text-slate-900 dark:text-white">Admin Dashboard</h1>
           </div>
           <div className="flex items-center gap-4">
-            <div className="hidden text-sm text-slate-500 sm:block">
-              Logged in as <span className="font-semibold text-slate-900">{session.user?.email}</span>
+            <div className="hidden text-sm text-slate-500 dark:text-slate-400 sm:block">
+              Logged in as <span className="font-semibold text-slate-900 dark:text-white">{session.user?.email}</span>
             </div>
             <button
               onClick={() => signOut({ callbackUrl: "/" })}
-              className="inline-flex items-center gap-2 rounded-md bg-slate-100 px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200"
+              className="inline-flex items-center gap-2 rounded-md bg-slate-100 dark:bg-white/5 px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors hover:bg-slate-200 dark:hover:bg-white/10"
             >
               <LogOut className="h-4 w-4" />
               Sign out
@@ -267,9 +265,9 @@ export default function AdminPage() {
 
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-slate-900">Content Control Center</h2>
-          <p className="mt-1 text-slate-500">
-            Products and website copy are saved in <span className="font-semibold text-slate-700">data/site-content.json</span>.
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Content Control Center</h2>
+          <p className="mt-1 text-slate-500 dark:text-slate-400">
+            Products and website copy are saved in <span className="font-semibold text-slate-700 dark:text-slate-300">data/site-content.json</span>.
           </p>
         </div>
 
@@ -282,7 +280,7 @@ export default function AdminPage() {
         {(message || error) && (
           <div
             className={`mb-6 rounded-md border px-4 py-3 text-sm font-medium ${
-              error ? "border-rose-200 bg-rose-50 text-rose-700" : "border-emerald-200 bg-emerald-50 text-emerald-700"
+              error ? "border-rose-200 dark:border-rose-500/20 bg-rose-50 dark:bg-rose-500/10 text-rose-700 dark:text-rose-400" : "border-emerald-200 dark:border-emerald-500/20 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400"
             }`}
           >
             {error || message}
@@ -290,15 +288,15 @@ export default function AdminPage() {
         )}
 
         {!content ? (
-          <div className="flex min-h-80 items-center justify-center rounded-xl border border-slate-200 bg-white">
+          <div className="flex min-h-80 items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/50">
             <Loader2 className="h-8 w-8 animate-spin text-forest" />
           </div>
         ) : (
           <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-            <section className="rounded-xl border border-slate-200 bg-white shadow-sm">
-              <div className="border-b border-slate-200 px-6 py-4">
-                <h3 className="text-lg font-semibold text-slate-900">Add Catalog Product</h3>
-                <p className="mt-1 text-sm text-slate-500">Submitting a product with an existing id updates that item.</p>
+            <section className="rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/50 shadow-sm transition-colors duration-500">
+              <div className="border-b border-slate-200 dark:border-white/10 px-6 py-4">
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Add Catalog Product</h3>
+                <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Submitting a product with an existing id updates that item.</p>
               </div>
 
               <form onSubmit={addProduct} className="grid gap-4 p-6 sm:grid-cols-2">
@@ -306,10 +304,10 @@ export default function AdminPage() {
                 <TextField label="Product ID" value={productForm.id} onChange={(id) => setProductForm((form) => ({ ...form, id }))} required />
                 
                 <div className="block sm:col-span-2">
-                  <span className="text-sm font-semibold text-slate-700">Product Image (Optional)</span>
-                  <span className="ml-2 text-xs text-slate-400">Upload a new image to replace the current one.</span>
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Product Image (Optional)</span>
+                  <span className="ml-2 text-xs text-slate-400 dark:text-slate-500">Upload a new image to replace the current one.</span>
                   {productForm.imageUrl && (
-                    <div className="mt-2 mb-2 text-xs font-medium text-emerald-700">
+                    <div className="mt-2 mb-2 text-xs font-medium text-emerald-700 dark:text-emerald-400">
                       Current Image: <a href={productForm.imageUrl} target="_blank" rel="noreferrer" className="underline">{productForm.imageUrl}</a>
                     </div>
                   )}
@@ -318,7 +316,7 @@ export default function AdminPage() {
                     accept="image/*"
                     ref={fileInputRef}
                     onChange={(e) => setSelectedFile(e.target.files?.[0] || null)}
-                    className="mt-1 block w-full text-sm text-slate-500 file:mr-4 file:rounded-md file:border-0 file:bg-emerald-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-emerald-700 hover:file:bg-emerald-100"
+                    className="mt-1 block w-full text-sm text-slate-500 dark:text-slate-400 file:mr-4 file:rounded-md file:border-0 file:bg-emerald-50 dark:file:bg-emerald-500/10 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-emerald-700 dark:file:text-emerald-400 hover:file:bg-emerald-100 dark:hover:file:bg-emerald-500/20 transition-colors"
                   />
                 </div>
 
@@ -351,16 +349,16 @@ export default function AdminPage() {
               </form>
             </section>
 
-            <section className="rounded-xl border border-slate-200 bg-white shadow-sm">
-              <div className="flex items-center justify-between border-b border-slate-200 px-6 py-4">
+            <section className="rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/50 shadow-sm transition-colors duration-500">
+              <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 px-6 py-4">
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-900">Website Text JSON</h3>
-                  <p className="mt-1 text-sm text-slate-500">Edit headings, CTA labels, contact copy, and other central text.</p>
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Website Text JSON</h3>
+                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Edit headings, CTA labels, contact copy, and other central text.</p>
                 </div>
                 <button
                   onClick={saveSiteText}
                   disabled={isSaving}
-                  className="inline-flex items-center gap-2 rounded-md bg-slate-900 px-4 py-2 text-sm font-bold text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="inline-flex items-center gap-2 rounded-md bg-slate-900 dark:bg-emerald-500 px-4 py-2 text-sm font-bold text-white transition hover:bg-slate-700 dark:hover:bg-emerald-400 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
                   Save Text
@@ -371,21 +369,21 @@ export default function AdminPage() {
                   value={jsonDraft}
                   onChange={(event) => setJsonDraft(event.target.value)}
                   spellCheck={false}
-                  className="min-h-[590px] w-full rounded-md border border-slate-200 bg-slate-950 p-4 font-mono text-xs leading-6 text-emerald-50 outline-none focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100"
+                  className="min-h-[590px] w-full rounded-md border border-slate-200 dark:border-white/10 bg-slate-950 dark:bg-slate-900 p-4 font-mono text-xs leading-6 text-emerald-50 outline-none focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 dark:focus:ring-emerald-500/20 transition-colors"
                 />
               </div>
             </section>
 
-            <section className="rounded-xl border border-slate-200 bg-white shadow-sm lg:col-span-2">
-              <div className="border-b border-slate-200 px-6 py-4">
-                <h3 className="text-lg font-semibold text-slate-900">Current Catalog Items</h3>
+            <section className="rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/50 shadow-sm lg:col-span-2 transition-colors duration-500">
+              <div className="border-b border-slate-200 dark:border-white/10 px-6 py-4">
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Current Catalog Items</h3>
               </div>
-              <div className="divide-y divide-slate-100">
+              <div className="divide-y divide-slate-100 dark:divide-white/5">
                 {content.products.map((product) => (
                   <div key={product.id} className="flex flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
-                      <p className="font-semibold text-slate-900">{product.title}</p>
-                      <p className="mt-1 text-sm text-slate-500">
+                      <p className="font-semibold text-slate-900 dark:text-white">{product.title}</p>
+                      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                         {product.category} · {product.active} · ₹{product.price}
                       </p>
                     </div>
@@ -396,7 +394,7 @@ export default function AdminPage() {
                           window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
                         disabled={isSaving}
-                        className="inline-flex w-fit items-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-60"
+                        className="inline-flex w-fit items-center gap-2 rounded-md border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-3 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 transition hover:bg-slate-100 dark:hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-60"
                       >
                         <Pencil className="h-4 w-4" />
                         Edit
@@ -404,7 +402,7 @@ export default function AdminPage() {
                       <button
                         onClick={() => deleteProduct(product.id)}
                         disabled={isSaving}
-                        className="inline-flex w-fit items-center gap-2 rounded-md border border-rose-200 bg-rose-50 px-3 py-2 text-sm font-semibold text-rose-600 transition hover:bg-rose-100 disabled:cursor-not-allowed disabled:opacity-60"
+                        className="inline-flex w-fit items-center gap-2 rounded-md border border-rose-200 dark:border-rose-500/20 bg-rose-50 dark:bg-rose-500/10 px-3 py-2 text-sm font-semibold text-rose-600 dark:text-rose-400 transition hover:bg-rose-100 dark:hover:bg-rose-500/20 disabled:cursor-not-allowed disabled:opacity-60"
                       >
                         <Trash2 className="h-4 w-4" />
                         Delete
@@ -423,11 +421,11 @@ export default function AdminPage() {
 
 function StatCard({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
-    <div className="flex items-center rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-      <div className="rounded-lg bg-slate-50 p-3">{icon}</div>
+    <div className="flex items-center rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/50 p-6 shadow-sm transition-colors duration-500">
+      <div className="rounded-lg bg-slate-50 dark:bg-white/5 p-3">{icon}</div>
       <div className="ml-5">
-        <p className="text-sm font-medium text-slate-500">{label}</p>
-        <p className="mt-1 text-3xl font-semibold text-slate-900">{value}</p>
+        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{label}</p>
+        <p className="mt-1 text-3xl font-semibold text-slate-900 dark:text-white">{value}</p>
       </div>
     </div>
   );
@@ -450,13 +448,13 @@ function TextField({
 }) {
   return (
     <label className={`block ${className}`}>
-      <span className="text-sm font-semibold text-slate-700">{label}</span>
-      {hint && <span className="ml-2 text-xs text-slate-400">{hint}</span>}
+      <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">{label}</span>
+      {hint && <span className="ml-2 text-xs text-slate-400 dark:text-slate-500">{hint}</span>}
       <input
         value={value}
         onChange={(event) => onChange(event.target.value)}
         required={required}
-        className="mt-1 h-11 w-full rounded-md border border-slate-200 px-3 text-sm outline-none focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100"
+        className="mt-1 h-11 w-full rounded-md border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 px-3 text-sm text-slate-900 dark:text-white outline-none focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 dark:focus:ring-emerald-500/20 transition-colors"
       />
     </label>
   );
@@ -473,12 +471,12 @@ function NumberField({
 }) {
   return (
     <label className="block">
-      <span className="text-sm font-semibold text-slate-700">{label}</span>
+      <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">{label}</span>
       <input
         type="number"
         value={value}
         onChange={(event) => onChange(Number(event.target.value))}
-        className="mt-1 h-11 w-full rounded-md border border-slate-200 px-3 text-sm outline-none focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100"
+        className="mt-1 h-11 w-full rounded-md border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 px-3 text-sm text-slate-900 dark:text-white outline-none focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 dark:focus:ring-emerald-500/20 transition-colors"
       />
     </label>
   );
@@ -497,11 +495,11 @@ function SelectField<T extends readonly string[]>({
 }) {
   return (
     <label className="block">
-      <span className="text-sm font-semibold text-slate-700">{label}</span>
+      <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">{label}</span>
       <select
         value={value}
         onChange={(event) => onChange(event.target.value as T[number])}
-        className="mt-1 h-11 w-full rounded-md border border-slate-200 bg-white px-3 text-sm outline-none focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100"
+        className="mt-1 h-11 w-full rounded-md border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 px-3 text-sm text-slate-900 dark:text-white outline-none focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 dark:focus:ring-emerald-500/20 transition-colors"
       >
         {values.map((item) => (
           <option key={item} value={item}>
@@ -526,12 +524,12 @@ function TextArea({
 }) {
   return (
     <label className="block">
-      <span className="text-sm font-semibold text-slate-700">{label}</span>
-      {hint && <span className="ml-2 text-xs text-slate-400">{hint}</span>}
+      <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">{label}</span>
+      {hint && <span className="ml-2 text-xs text-slate-400 dark:text-slate-500">{hint}</span>}
       <textarea
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="mt-1 min-h-28 w-full rounded-md border border-slate-200 px-3 py-2 text-sm outline-none focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100"
+        className="mt-1 min-h-28 w-full rounded-md border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 px-3 py-2 text-sm text-slate-900 dark:text-white outline-none focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 dark:focus:ring-emerald-500/20 transition-colors"
       />
     </label>
   );

@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
-import { useLenis } from "lenis/react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import {
   Leaf, ShieldCheck, Factory, Phone, Mail, ArrowRight,
   Star, Droplets, Recycle, Award, ChevronLeft, ChevronRight,
@@ -326,13 +325,6 @@ export function LandingPage() {
   const statsRef = useRef<HTMLElement>(null);
   const statsInView = useInView(statsRef, { once: true, margin: "-80px" });
   
-  const scrollY = useMotionValue(0);
-  useLenis((e) => {
-    scrollY.set(e.scroll);
-  });
-  
-  const heroTextY = useTransform(scrollY, [0, 1000], [0, 150]);
-  const heroCardsY = useTransform(scrollY, [0, 1000], [0, -100]);
   const homeText = content.siteText.home;
   const brandText = content.siteText.brand;
   const featuredProducts = content.products.slice(0, 3);
@@ -363,7 +355,6 @@ export function LandingPage() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: "easeOut" }}
-            style={{ y: heroTextY }}
             className="max-w-2xl"
           >
             <div className="mb-7 inline-flex items-center gap-3 rounded-md border border-emerald-200 dark:border-emerald-500/20 bg-emerald-50 dark:bg-emerald-500/10 px-4 py-2 backdrop-blur-sm">
@@ -418,29 +409,30 @@ export function LandingPage() {
             </div>
           </motion.div>
 
-          <motion.div style={{ y: heroCardsY }} className="relative grid grid-cols-2 gap-4 lg:gap-6 h-full min-h-[480px]">
+          <div className="relative grid grid-cols-2 gap-4 lg:gap-6 h-full min-h-[480px]">
             {/* Card A: Product Showcase */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="col-span-2 sm:col-span-1 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 shadow-sm flex flex-col justify-center items-center backdrop-blur-sm"
+              className="relative col-span-2 sm:col-span-1 rounded-xl border border-slate-200 dark:border-white/10 shadow-sm overflow-hidden flex flex-col justify-end min-h-[320px]"
             >
-              <div className="relative w-full aspect-square max-w-[220px]">
-                <Image 
-                  src="/images/laundroclean.png" 
-                  alt="Product Showcase" 
-                  fill
-                  className="object-contain brightness-110 contrast-125 saturate-110"
-                />
+              <Image 
+                src="/images/ANU UNCLE1.jpeg" 
+                alt="Complete Range" 
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+              <div className="relative z-10 p-6 mt-auto">
+                <p className="text-xs font-bold uppercase tracking-widest text-white/90">Comprehensive Range</p>
               </div>
-              <p className="mt-6 text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">Flagship Formula</p>
             </motion.div>
 
             <div className="col-span-2 sm:col-span-1 flex flex-col gap-4 lg:gap-6">
               {/* Card B: Legacy */}
               <motion.div
-                initial={{ opacity: 0, y: -20 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="flex-1 rounded-xl border border-slate-200 dark:border-white/10 bg-forest dark:bg-slate-900/50 p-6 shadow-sm flex flex-col justify-center text-white backdrop-blur-sm"
@@ -454,8 +446,8 @@ export function LandingPage() {
 
               {/* Card C: Products */}
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="flex-1 rounded-xl border border-emerald-100 dark:border-white/10 bg-emerald-50 dark:bg-white/5 p-6 shadow-sm flex flex-col justify-center backdrop-blur-sm"
               >
@@ -488,7 +480,7 @@ export function LandingPage() {
                 </div>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

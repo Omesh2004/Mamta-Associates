@@ -17,28 +17,29 @@ export async function POST(request: Request) {
   }
 
   try {
-    const formData = await request.formData();
-    const file = formData.get("file") as File | null;
+    const { searchParams } = new URL(request.url);
+    const filename = searchParams.get("filename");
 
-    if (!file) {
+    if (!filename || !request.body) {
       return NextResponse.json({ error: "No file provided" }, { status: 400 });
     }
 
-    const filename = file.name;
+    if (!process.env.BLOB_READ_WRITE_TOKEN) {
+      throw new Error("BLOB_READ_WRITE_TOKEN is not defined in environment variables");
+    }
 
     // Upload to Vercel Blob
-    const blob = await put(filename, file, {
+    const blob = await put(filename, request.body, {
       access: 'public',
-      // prevent duplicate names from overwriting by generating a unique suffix if needed,
-      // or we can use addRandomSuffix: false if we want strict filenames
-      addRandomSuffix: false, 
+      addRandomSuffix: true, 
+      token: process.env.BLOB_READ_WRITE_TOKEN,
     });
 
     return NextResponse.json({ ok: true, filename: blob.url });
   } catch (error) {
     console.error("Upload error:", error);
     return NextResponse.json(
-      { error: "Failed to upload image." },
+      { error: "Failed to upload image.", details: error instanceof Error ? error.message : String(error) },
       { status: 500 }
     );
   }

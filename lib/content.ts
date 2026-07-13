@@ -57,7 +57,10 @@ export async function writeSiteContent(content: SiteContent) {
         imageUrl: p.imageUrl,
       }))
     })
-  ]);
+  ], {
+    maxWait: 10000, // 10 seconds
+    timeout: 20000, // 20 seconds
+  });
 }
 
 export function validateSiteContent(content: unknown): asserts content is SiteContent {
