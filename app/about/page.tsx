@@ -16,15 +16,7 @@ export default function AboutPage() {
     <main className="relative min-h-screen bg-slate-50 dark:bg-slate-950 selection:bg-emerald-500/30 transition-colors duration-500">
       {/* ── HAZIFIED PARALLAX BACKGROUND ── */}
       <div className="fixed inset-0 -z-10 h-full w-full overflow-hidden">
-        <motion.div style={{ y: backgroundY }} className="absolute -inset-[20%] h-[140%] w-[140%]">
-          <Image
-            src="/images/OIP.webp"
-            alt="Background"
-            fill
-            className="object-cover opacity-40 brightness-110 contrast-125 saturate-110"
-            priority
-          />
-        </motion.div>
+
         <div className="absolute inset-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-[12px] transition-colors duration-500"></div>
         {/* Subtle glowing orbs */}
         <div className="absolute top-0 left-1/4 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-600/20 blur-[120px]" />
@@ -75,7 +67,7 @@ export default function AboutPage() {
             <div className="mt-10 flex items-center justify-center gap-4">
               <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-emerald-500" />
               <div className="text-left">
-                <div className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white">Mr. Arun Mehta</div>
+                <div className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white">Mr. Anubhav Mishra</div>
                 <div className="mt-1 text-xs text-emerald-600 dark:text-emerald-400 font-medium">Founder, Mamta Associates</div>
               </div>
               <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-emerald-500" />

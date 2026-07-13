@@ -31,3 +31,11 @@ model SiteText {
   id    String @id @default("global")
   value Json
 }
+
+model Message {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}

@@ -27,6 +27,14 @@ import {
 } from "@/lib/products";
 import type { SiteContent } from "@/lib/content";
 
+type Message = {
+  id: string;
+  name: string;
+  email: string;
+  message: string;
+  createdAt: string;
+};
+
 type ProductForm = Omit<Product, "application" | "certifications" | "badges" | "compatibility"> & {
   application: string;
   certifications: string;
@@ -109,6 +117,8 @@ export default function AdminPage() {
   const [isSaving, setIsSaving] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [messagesList, setMessagesList] = useState<Message[]>([]);
+  const [isLoadingMessages, setIsLoadingMessages] = useState(true);
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -129,6 +139,15 @@ export default function AdminPage() {
         setJsonDraft(JSON.stringify(nextContent.siteText, null, 2));
       })
       .catch((loadError) => setError(loadError instanceof Error ? loadError.message : "Unable to load content."));
+
+    fetch("/api/admin/messages", { cache: "no-store" })
+      .then(async (res) => {
+        if (!res.ok) throw new Error("Failed to fetch messages");
+        const data = await res.json();
+        if (data.messages) setMessagesList(data.messages);
+      })
+      .catch((err) => console.error("Error loading messages:", err))
+      .finally(() => setIsLoadingMessages(false));
   }, [status]);
 
   const totalProducts = content?.products.length ?? 0;
@@ -217,6 +236,20 @@ export default function AdminPage() {
       ...content,
       products: content.products.filter((product) => product.id !== id)
     });
+  }
+
+  async function deleteMessage(id: string) {
+    if (!confirm("Are you sure you want to delete this inquiry?")) return;
+    try {
+      const res = await fetch(`/api/admin/messages?id=${id}`, { method: "DELETE" });
+      if (res.ok) {
+        setMessagesList(messagesList.filter((msg) => msg.id !== id));
+      } else {
+        alert("Failed to delete message.");
+      }
+    } catch {
+      alert("Failed to delete message.");
+    }
   }
 
   function saveSiteText() {
@@ -371,6 +404,41 @@ export default function AdminPage() {
                   spellCheck={false}
                   className="min-h-[590px] w-full rounded-md border border-slate-200 dark:border-white/10 bg-slate-950 dark:bg-slate-900 p-4 font-mono text-xs leading-6 text-emerald-50 outline-none focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 dark:focus:ring-emerald-500/20 transition-colors"
                 />
+              </div>
+            </section>
+
+            <section className="rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/50 shadow-sm lg:col-span-2 transition-colors duration-500">
+              <div className="border-b border-slate-200 dark:border-white/10 px-6 py-4">
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Recent Inquiries</h3>
+              </div>
+              <div className="divide-y divide-slate-100 dark:divide-white/5">
+                {isLoadingMessages ? (
+                  <div className="flex justify-center p-6"><Loader2 className="h-6 w-6 animate-spin text-forest dark:text-emerald-400" /></div>
+                ) : messagesList.length === 0 ? (
+                  <div className="p-6 text-sm text-slate-500 dark:text-slate-400">No new inquiries.</div>
+                ) : (
+                  messagesList.map((msg) => (
+                    <div key={msg.id} className="flex flex-col gap-4 px-6 py-4 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between sm:justify-start sm:gap-4">
+                          <p className="font-semibold text-slate-900 dark:text-white">{msg.name}</p>
+                          <p className="text-xs text-slate-500 dark:text-slate-400">{new Date(msg.createdAt).toLocaleString()}</p>
+                        </div>
+                        <a href={`mailto:${msg.email}`} className="text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:underline">{msg.email}</a>
+                        <p className="mt-3 text-sm text-slate-700 dark:text-slate-300 whitespace-pre-wrap">{msg.message}</p>
+                      </div>
+                      <div className="mt-4 flex items-center gap-2 sm:mt-0">
+                        <button
+                          onClick={() => deleteMessage(msg.id)}
+                          className="inline-flex w-fit items-center gap-2 rounded-md border border-rose-200 dark:border-rose-500/20 bg-rose-50 dark:bg-rose-500/10 px-3 py-2 text-sm font-semibold text-rose-600 dark:text-rose-400 transition hover:bg-rose-100 dark:hover:bg-rose-500/20"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
             </section>
 
