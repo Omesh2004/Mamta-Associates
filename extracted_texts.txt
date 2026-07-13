@@ -1,0 +1,12 @@
+
+
+--- Error reading Haylide - Laundry Brochure.pdf: pdfParse is not a function ---
+
+
+
+--- Error reading Haylide Food Hygiene Brochure.pdf: pdfParse is not a function ---
+
+
+
+--- Error reading Haylide Hospital Brochure 2024.pdf: pdfParse is not a function ---
+

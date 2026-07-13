@@ -1,0 +1,1630 @@
+{
+  "siteText": {
+    "brand": {
+      "name": "MAMTA ASSOCIATES",
+      "tagline": "Green Cleaning Technology"
+    },
+    "catalog": {
+      "eyebrow": "Eco-Certified Cleaning Chemistry",
+      "title": "Product Catalog",
+      "description": "Browse our brochure-backed hospital, kitchen, washroom, industrial, and laundry products. Filter by category, application, and certifications to find the right solution for your facility.",
+      "footer": "Mamta Associates. All rights reserved. Powered by Haylide Green Cleaning Technology."
+    },
+    "home": {
+      "heroBadge": "Quality assured by specialists",
+      "heroTitleLine1": "World-Class",
+      "heroTitleLine2": "High Performance",
+      "heroTitleAccent": "Green Cleaning.",
+      "heroDescription": "Manufacturing over 90 specialty products for Housekeeping, Infection Control, Medical, Food-Pharma, and Laundry. Delivering FDA-licensed efficacy with uncompromising environmental safety.",
+      "primaryCta": "View Product Catalog",
+      "secondaryCta": "Corporate Profile",
+      "phone": "+91 98200 00000",
+      "email": "support@mamtaassociates.in",
+      "location": "India manufacturing",
+      "catalogEyebrow": "Our Core Solutions",
+      "catalogTitle": "Engineered for Specific Industrial Applications.",
+      "catalogDescription": "Our complete range is designed for critical hygiene needs, reducing inventory and training costs while ensuring resource, manpower, and utility savings."
+    }
+  },
+  "products": [
+    {
+      "id": "sterimop",
+      "title": "Sterimop Disinfectant Floor & Hard Surface Cleaner",
+      "category": "Hospital",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Benzalkonium Chloride 3% w/v with alcohol and food-safe additives",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Premium fragrance",
+        "All-surface safe",
+        "Floor disinfection"
+      ],
+      "imageTone": "from-emerald-50 via-white to-teal-100",
+      "packageType": "trigger",
+      "popularity": 98,
+      "ecoScore": 128,
+      "molecule": "A benzalkonium chloride system with ethanol helps clean and disinfect floors and hard surfaces in a neutral pH format.",
+      "compatibility": [
+        "Marble",
+        "Granite",
+        "Tiles",
+        "Wood",
+        "Glass",
+        "Steel"
+      ],
+      "dilution": "Dilution: 1% or 10 ml/ltr. Use with floor mopping, spray and wipe, or machine scrub as required.",
+      "impact": "Low-VOC formulation designed for general area cleaning with reduced solvent load and improved indoor safety."
+    },
+    {
+      "id": "sterimop-hf",
+      "title": "Sterimop HF Disinfectant Floor & Hard Surface Cleaner",
+      "category": "Hospital",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Benzalkonium Chloride with pine oil fragrance for heavy deodorizing applications",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "High fragrance",
+        "Heavy deodorizing",
+        "Floor mopping"
+      ],
+      "imageTone": "from-emerald-50 via-white to-teal-100",
+      "packageType": "trigger",
+      "popularity": 97,
+      "ecoScore": 124,
+      "molecule": "A fragranced disinfectant base for floor and hard-surface cleaning when deodorizing performance is the priority.",
+      "compatibility": [
+        "Marble",
+        "Granite",
+        "Tiles",
+        "Wooden floors",
+        "Glass",
+        "Plastic"
+      ],
+      "dilution": "Use at 1% to 2% depending on the freshness and sheen required for floor mopping and spray wiping.",
+      "impact": "Readily biodegradable cleaner developed for indoor hygiene where a stronger fragrance profile is preferred."
+    },
+    {
+      "id": "lfra-floor-cleaner",
+      "title": "LFRA - Floor Cleaner & Disinfectant",
+      "category": "Kitchen",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "FDA",
+        "US FDA GRAS"
+      ],
+      "active": "Benzalkonium Chloride 4% w/v with alcohol and food-safe additives",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Food-contact rinse off",
+        "Low VOC",
+        "FDA licensed"
+      ],
+      "imageTone": "from-cyan-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 96,
+      "ecoScore": 126,
+      "molecule": "A food-area floor disinfectant built around benzalkonium chloride, natural-source surfactants, and sodium gluconate.",
+      "compatibility": [
+        "Production rooms",
+        "Mixing rooms",
+        "Packaging rooms",
+        "Food-contact floors",
+        "Hard surfaces"
+      ],
+      "dilution": "Dilution: 2% to 5% or 20 to 50 ml/ltr. Use for spray, foam, or mop cleaning with the indicated contact time.",
+      "impact": "Designed for food-industry hygiene with biodegradable ingredients and reduced synthetic solvent content."
+    },
+    {
+      "id": "sterishine-lfra",
+      "title": "STERISHINE LFRA Disinfectant Floor & Hard Surface Cleaner",
+      "category": "Hospital",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "FDA",
+        "GreenPro"
+      ],
+      "active": "Neutral hard-surface cleaner with ethanol, chelates, and food-safe surfactants",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Critical areas",
+        "Unfragranced",
+        "All-surface safe"
+      ],
+      "imageTone": "from-slate-100 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 95,
+      "ecoScore": 129,
+      "molecule": "A neutral disinfectant cleaner for critical-area floors and hard surfaces, tuned for low residue and easy wipe-off.",
+      "compatibility": [
+        "Marble",
+        "Granite",
+        "Tiles",
+        "Wood",
+        "Glass",
+        "Steel"
+      ],
+      "dilution": "Use at 1% to 3% depending on the floor shine, freshness, and disinfection demand.",
+      "impact": "Formulated for safer hospital housekeeping with lower solvent load and strong surface compatibility."
+    },
+    {
+      "id": "oxycleanz-plus",
+      "title": "OxyCleanz+ Multi-Surface Cleaner & Disinfectant",
+      "category": "Hospital",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "FDA",
+        "GreenPro"
+      ],
+      "active": "Hydrogen Peroxide 5% w/v with non-ionic surfactants and chelating agents",
+      "price": 0,
+      "caseQty": "1 L",
+      "badges": [
+        "Super concentrate",
+        "No added fragrance",
+        "99.99% efficacy"
+      ],
+      "imageTone": "from-slate-100 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 94,
+      "ecoScore": 141,
+      "molecule": "Hydrogen peroxide provides rapid oxidation while the surfactant and chelate system helps lift residues from hard surfaces.",
+      "compatibility": [
+        "Glass",
+        "Steel",
+        "Laminate",
+        "Furniture",
+        "Electronics",
+        "All floors"
+      ],
+      "dilution": "Dilution: 1:200 or 0.5% / 5 ml/ltr. Use with a dilutor for spray, mop, or machine scrub cleaning.",
+      "impact": "Readily biodegradable and free from NPE, caustic, EDTA, chlorides, and synthetic solvents."
+    },
+    {
+      "id": "kleen-and-shine",
+      "title": "Kleen & Shine Hard Surface Cleaner & Disinfectant+",
+      "category": "Hospital",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "FDA",
+        "GreenPro"
+      ],
+      "active": "Hydrogen Peroxide + peracetic acid with ethanol and chelates",
+      "price": 0,
+      "caseQty": "1 L",
+      "badges": [
+        "Ready to use",
+        "All-surface safe",
+        "Broad spectrum"
+      ],
+      "imageTone": "from-emerald-50 via-white to-sky-50",
+      "packageType": "trigger",
+      "popularity": 93,
+      "ecoScore": 138,
+      "molecule": "An accelerated peroxide system designed for easy spray-and-wipe disinfection on hard surfaces and equipment.",
+      "compatibility": [
+        "Glass",
+        "Steel",
+        "Laminate",
+        "Plastic",
+        "Hard surfaces"
+      ],
+      "dilution": "Ready to use on hard surfaces. Spray and wipe for soil removal and disinfection in a single step.",
+      "impact": "Eco-green formula built around naturally derived ingredients with a low-residue, low-VOC profile."
+    },
+    {
+      "id": "utilex-peroxy",
+      "title": "UTILEX - PEROXY",
+      "category": "Hospital",
+      "application": [
+        "CIP"
+      ],
+      "certifications": [
+        "US FDA GRAS"
+      ],
+      "active": "Peroxyacetic acid 10-15%, acetic acid 10-15%, and hydrogen peroxide 15-18%",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Accelerated peroxide",
+        "Broad spectrum",
+        "CIP disinfection"
+      ],
+      "imageTone": "from-slate-100 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 92,
+      "ecoScore": 146,
+      "molecule": "A peroxyacid blend that oxidizes microorganisms rapidly during CIP and rinse-off disinfection cycles.",
+      "compatibility": [
+        "Production vessels",
+        "Conveyors",
+        "Pipelines",
+        "Counters",
+        "Food-contact surfaces"
+      ],
+      "dilution": "Dilution: 1% or 10 ml/ltr. Contact time: 1 to 5 minutes depending on the process and contamination load.",
+      "impact": "Built for US FDA GRAS-aligned food-contact hygiene with reduced time, water, and energy usage."
+    },
+    {
+      "id": "utilex-san-plus",
+      "title": "UTILEX SAN+",
+      "category": "Hospital",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "US FDA GRAS"
+      ],
+      "active": "Non-rinse quat plus biguanide disinfectant concentrate",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "No-rinse",
+        "Food safe",
+        "Spray and leave"
+      ],
+      "imageTone": "from-slate-100 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 91,
+      "ecoScore": 142,
+      "molecule": "A concentrated no-rinse disinfectant for hard surfaces and reusable surgical equipment after cleaning.",
+      "compatibility": [
+        "Hard surfaces",
+        "Reusable surgical equipment",
+        "Floors",
+        "OTs",
+        "ICU wards"
+      ],
+      "dilution": "Dilution: 1% or 10 ml in 990 ml water for 200 ppm BKC. Use as a manual mist spray, last-step CIP, or flood application.",
+      "impact": "Designed to save time and water while supporting food-safe disinfection at the required concentration."
+    },
+    {
+      "id": "quatfog",
+      "title": "Quatfog Disinfectant Concentrate",
+      "category": "Hospital",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "US FDA GRAS"
+      ],
+      "active": "Dimethyl benzyl ammonium chloride 8% w/v and didecyl dimethyl ammonium chloride 8% w/v",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Fogging",
+        "Broad spectrum",
+        "Irritant concentrate"
+      ],
+      "imageTone": "from-slate-100 via-white to-emerald-100",
+      "packageType": "drum",
+      "popularity": 90,
+      "ecoScore": 127,
+      "molecule": "A quaternary ammonium fogging blend intended for wet-surface disinfection in non-food-contact areas.",
+      "compatibility": [
+        "Production rooms",
+        "Mixing rooms",
+        "Packaging rooms",
+        "Hospitals",
+        "Pharma zones"
+      ],
+      "dilution": "Dilution: 1:100 for 800 ppm DBAC and DDAC. Wet the area with a fogging machine and ventilate after use.",
+      "impact": "Built for controlled fogging applications with a clear PPE and ventilation workflow."
+    },
+    {
+      "id": "sterix",
+      "title": "STERIX Washroom RTU Cleaner & Sanitizer",
+      "category": "Washroom",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Eco-acid cleaner with citric chelates and green acid system",
+      "price": 0,
+      "caseQty": "1 L",
+      "badges": [
+        "RTU",
+        "WC and urinal cleaner",
+        "Low VOC"
+      ],
+      "imageTone": "from-violet-50 via-white to-emerald-50",
+      "packageType": "trigger",
+      "popularity": 89,
+      "ecoScore": 123,
+      "molecule": "A washroom cleaner that combines eco-acids and citric chelates for high-traffic WC and urinal maintenance.",
+      "compatibility": [
+        "WC bowls",
+        "Urinals",
+        "Sink counters",
+        "Taps",
+        "Glass mirrors",
+        "Seat covers"
+      ],
+      "dilution": "Ready to use. Apply, brush, scrub, and flush as required for routine washroom maintenance.",
+      "impact": "Formulated to stay EDTA free, NTA free, and safer for aquatic discharge than inorganic-acid cleaners."
+    },
+    {
+      "id": "fresh-sterix",
+      "title": "Fresh Sterix Urinal Line Deodourizer Concentrate",
+      "category": "Washroom",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Urinal line deodorizer concentrate with naturally derived solubilizers",
+      "price": 0,
+      "caseQty": "1 L",
+      "badges": [
+        "Fresh feel",
+        "Premium fragrance",
+        "Concentrate"
+      ],
+      "imageTone": "from-violet-50 via-white to-emerald-50",
+      "packageType": "trigger",
+      "popularity": 88,
+      "ecoScore": 118,
+      "molecule": "A deodorizer concentrate intended for urinal line maintenance and routine restroom freshness.",
+      "compatibility": [
+        "Urinal lines",
+        "Washrooms",
+        "Public toilets",
+        "High traffic restrooms"
+      ],
+      "dilution": "Use as supplied or at the indicated super-concentrate dilution. Apply and refresh according to traffic load.",
+      "impact": "A low-residue fragrance product designed for better indoor air quality in washrooms."
+    },
+    {
+      "id": "zing-plus",
+      "title": "Zing+ Super Concentrate Air Freshener",
+      "category": "Washroom",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "IFRA-compliant phthalate-free fragrance in a synthetic solvent free base",
+      "price": 0,
+      "caseQty": "1 L",
+      "badges": [
+        "Super concentrate",
+        "Phthalate free",
+        "VOC free fragrance"
+      ],
+      "imageTone": "from-violet-50 via-white to-emerald-50",
+      "packageType": "trigger",
+      "popularity": 87,
+      "ecoScore": 111,
+      "molecule": "A fragrance delivery system that uses naturally derived solubilizers and solvent-free handling for indoor freshness.",
+      "compatibility": [
+        "Washrooms",
+        "Lobbies",
+        "Office corridors",
+        "Pantries",
+        "Public spaces"
+      ],
+      "dilution": "Dilution: 1% with IFRA-compliant use instructions. Apply in ventilated areas and refresh as needed.",
+      "impact": "Designed to deliver fragrance without synthetic solvent carriers and with reduced airborne residue."
+    },
+    {
+      "id": "elq-f",
+      "title": "ELQ F Food Grade Un-fragranced Hand Wash",
+      "category": "Washroom",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "FDA"
+      ],
+      "active": "Laureth sulfate with aloe vera and glycerine",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Food grade",
+        "Un-fragranced",
+        "Quick rinse"
+      ],
+      "imageTone": "from-emerald-50 via-white to-sky-50",
+      "packageType": "pump",
+      "popularity": 92,
+      "ecoScore": 119,
+      "molecule": "A skin-friendly hand wash base designed to foam well, rinse quickly, and feel moisturized after use.",
+      "compatibility": [
+        "Handwash stations",
+        "Hospitals",
+        "Hotels",
+        "Food plants",
+        "Office washrooms"
+      ],
+      "dilution": "Use as supplied in dispenser pumps. Wet hands, lather, rinse, and dry after standard hand hygiene steps.",
+      "impact": "Built without slurry soap oil and with a focus on frequent-use hygiene in food and institutional settings."
+    },
+    {
+      "id": "fresh-hands-elq",
+      "title": "Fresh Hands ELQ Economy Gel Hand Wash",
+      "category": "Washroom",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "FDA"
+      ],
+      "active": "Medium-foam citrus hand wash with skin-friendly surfactants",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Economy gel",
+        "Quick rinse",
+        "Citrus feel"
+      ],
+      "imageTone": "from-emerald-50 via-white to-sky-50",
+      "packageType": "pump",
+      "popularity": 91,
+      "ecoScore": 116,
+      "molecule": "A hand wash that balances regular-feel cleansing with a quick-rinse user experience for high-traffic washrooms.",
+      "compatibility": [
+        "Handwash stations",
+        "Office washrooms",
+        "Hospitals",
+        "Hotels"
+      ],
+      "dilution": "Use as supplied in dispensers. Apply, lather, rinse, and dry after the recommended wash cycle.",
+      "impact": "Designed for routine hand hygiene with a softer fragrance and easier rinse profile."
+    },
+    {
+      "id": "fresh-hands-pearl",
+      "title": "Fresh Hands Pearl Pearly Hand Wash",
+      "category": "Washroom",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "FDA"
+      ],
+      "active": "Medium-foam pearly hand wash with creamy feel",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Pearly finish",
+        "Creamy feel",
+        "Classy fragrance"
+      ],
+      "imageTone": "from-emerald-50 via-white to-sky-50",
+      "packageType": "pump",
+      "popularity": 90,
+      "ecoScore": 114,
+      "molecule": "A pearly textured hand wash designed to feel premium while keeping rinse time and residue low.",
+      "compatibility": [
+        "Handwash stations",
+        "Office washrooms",
+        "Hotels",
+        "Public washrooms"
+      ],
+      "dilution": "Use as supplied. Wet hands, work into a lather, rinse thoroughly, and dry.",
+      "impact": "Suitable for frequent handwashing with a balanced sensory profile and gentle rinse-off."
+    },
+    {
+      "id": "fresh-hands-foam",
+      "title": "Fresh Hands Foam Hand Wash for Foam Dispenser",
+      "category": "Washroom",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "FDA"
+      ],
+      "active": "High-foam, low-use hand wash base for foam dispensers",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Foam dispenser",
+        "Fast rinse",
+        "Deluxe feel"
+      ],
+      "imageTone": "from-emerald-50 via-white to-sky-50",
+      "packageType": "pump",
+      "popularity": 89,
+      "ecoScore": 113,
+      "molecule": "A concentrated foam hand wash tuned for high-lather output and a fast rinse cycle.",
+      "compatibility": [
+        "Foam dispensers",
+        "Office washrooms",
+        "Hospitals",
+        "Hotels"
+      ],
+      "dilution": "Use in foam dispensers as supplied. Apply one or two pumps, lather, rinse, and dry.",
+      "impact": "Optimized to reduce product use per wash while keeping a premium foam feel."
+    },
+    {
+      "id": "fresh-hands-lq",
+      "title": "Fresh Hands LQ Gel Hand Wash",
+      "category": "Washroom",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "FDA"
+      ],
+      "active": "High-foam floral gel hand wash with easy rinse profile",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Gel hand wash",
+        "Floral fragrance",
+        "Easy rinse"
+      ],
+      "imageTone": "from-emerald-50 via-white to-sky-50",
+      "packageType": "pump",
+      "popularity": 88,
+      "ecoScore": 112,
+      "molecule": "A deluxe gel hand wash made for a softer finish and good user experience in public washrooms.",
+      "compatibility": [
+        "Handwash stations",
+        "Office washrooms",
+        "Hotels",
+        "Public washrooms"
+      ],
+      "dilution": "Use as supplied in handwash dispensers. Lather, rinse, and dry after the standard wash cycle.",
+      "impact": "Geared toward high-traffic environments where fragrance, foam, and rinse speed all matter."
+    },
+    {
+      "id": "utilex-l",
+      "title": "UTILEX-L Multi Kitchen & Dish Cleaner",
+      "category": "Kitchen",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "US FDA GRAS"
+      ],
+      "active": "Lemon extract food-surface detergent with higher foam",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Food safe",
+        "Higher foam",
+        "Low dilution"
+      ],
+      "imageTone": "from-cyan-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 96,
+      "ecoScore": 124,
+      "molecule": "A kitchen detergent built for manual scrubbing and rinsing on food-contact surfaces.",
+      "compatibility": [
+        "Food counters",
+        "Hobs",
+        "Tiles",
+        "Stainless Steel",
+        "Exhaust panels"
+      ],
+      "dilution": "Use at the indicated 2% to 5% range depending on soil level and rinse-off requirement.",
+      "impact": "US FDA GRAS-aligned for food-contact hygiene with a focus on lower residue and better rinse performance."
+    },
+    {
+      "id": "utilex-m",
+      "title": "UTILEX-M Auto Dishwash Detergent",
+      "category": "Kitchen",
+      "application": [
+        "CIP"
+      ],
+      "certifications": [
+        "US FDA GRAS"
+      ],
+      "active": "Machine dishwashing liquid for automatic cycles",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Auto dishwash",
+        "Food safe",
+        "Fast dry"
+      ],
+      "imageTone": "from-cyan-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 95,
+      "ecoScore": 121,
+      "molecule": "A machine dishwashing liquid intended for automatic wash cycles and food-safe rinse workflows.",
+      "compatibility": [
+        "Dishwash machines",
+        "Food service glassware",
+        "Utensils",
+        "Canteens"
+      ],
+      "dilution": "Use in automatic machine dosing at the specified low-dilution range for effective dishwash cycles.",
+      "impact": "Formulated to work within US FDA GRAS-oriented food hygiene expectations and faster drying cycles."
+    },
+    {
+      "id": "utilex-r",
+      "title": "UTILEX-R Auto Dishwash Rinse Aid",
+      "category": "Kitchen",
+      "application": [
+        "CIP"
+      ],
+      "certifications": [
+        "US FDA GRAS"
+      ],
+      "active": "Machine dishwash rinse aid for faster drying and spot-free finish",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Rinse aid",
+        "Spot free",
+        "Fast dry"
+      ],
+      "imageTone": "from-cyan-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 94,
+      "ecoScore": 120,
+      "molecule": "A rinse-aid system that helps water sheet off plates, glasses, and utensils more efficiently.",
+      "compatibility": [
+        "Dishwash machines",
+        "Glassware",
+        "Utensils",
+        "Food service surfaces"
+      ],
+      "dilution": "Use in the rinse stage of the machine cycle as directed for low-residue drying.",
+      "impact": "Supports quicker drying and reduced spotting without introducing harsh solvent load."
+    },
+    {
+      "id": "utilex-iii",
+      "title": "UTILEX III Disinfectant Kitchen Wash",
+      "category": "Kitchen",
+      "application": [
+        "Manual",
+        "Surface",
+        "CIP"
+      ],
+      "certifications": [
+        "US FDA GRAS"
+      ],
+      "active": "Benzalkonium Chloride 3% w/v with food-safe surfactants and chelates",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Neutral pH",
+        "Foaming",
+        "Disinfecting wash"
+      ],
+      "imageTone": "from-cyan-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 93,
+      "ecoScore": 125,
+      "molecule": "A neutral foaming kitchen disinfectant for manual scrub, rinse, and spray-clean use.",
+      "compatibility": [
+        "Production vessels",
+        "Conveyors",
+        "Floor surfaces",
+        "Hard surfaces",
+        "Food-contact areas"
+      ],
+      "dilution": "Use at 2% to 5% depending on surface type and soil load, then rinse off as needed.",
+      "impact": "Designed for food-industry hygiene with a rinse-off profile and lower solvent dependence."
+    },
+    {
+      "id": "utilex-chlor-tab",
+      "title": "UTILEX Chlor Tab Disinfectant Kitchen Tablet",
+      "category": "Kitchen",
+      "application": [
+        "CIP",
+        "Manual"
+      ],
+      "certifications": [
+        "US FDA GRAS"
+      ],
+      "active": "Chlorine tablet disinfectant for kitchen hygiene use",
+      "price": 0,
+      "caseQty": "Tablet pack",
+      "badges": [
+        "Chlorine tablet",
+        "Kitchen wash",
+        "Food hygiene"
+      ],
+      "imageTone": "from-cyan-50 via-white to-emerald-100",
+      "packageType": "drum",
+      "popularity": 92,
+      "ecoScore": 110,
+      "molecule": "A tablet-based disinfecting format intended for kitchen and food-prep sanitation workflows.",
+      "compatibility": [
+        "Kitchen surfaces",
+        "Food-prep areas",
+        "Wash-down points",
+        "Canteens"
+      ],
+      "dilution": "Dissolve and use at the instructed working concentration for manual or CIP sanitation.",
+      "impact": "Packaged to simplify dosing while keeping the food-hygiene workflow controlled and repeatable."
+    },
+    {
+      "id": "utilex-drain",
+      "title": "UTILEX DRAIN Alkaline Drain Cleaner",
+      "category": "Industrial",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Alkaline drain cleaning chemistry for blockages and grease removal",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Drain cleaner",
+        "Fast acting",
+        "Food safe"
+      ],
+      "imageTone": "from-slate-100 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 85,
+      "ecoScore": 108,
+      "molecule": "An alkaline cleaner formulated for drain maintenance and grease breakup in service areas.",
+      "compatibility": [
+        "Drains",
+        "Service sinks",
+        "Kitchen utility areas",
+        "Wash-down lines"
+      ],
+      "dilution": "Use as directed for drain maintenance and grease removal. Rinse after treatment if required.",
+      "impact": "Designed to address blockages without introducing unnecessary synthetic solvent load."
+    },
+    {
+      "id": "laundro-mulse-e-super",
+      "title": "LAUNDRO MULSE E & SUPER",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Hi power emulsifier with enzymes",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Enzyme boosted",
+        "Biodegradable",
+        "Hospital linen"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 96,
+      "ecoScore": 135,
+      "molecule": "A neutral laundry emulsifier that uses enzymes to break down protein and grease soils in the main wash.",
+      "compatibility": [
+        "Hospital linen",
+        "F&B linen",
+        "Towels",
+        "Uniforms"
+      ],
+      "dilution": "Use at 4 to 8 ml/Kg in the main wash cycle, following the indicated temperature range.",
+      "impact": "High-performance laundry chemistry with readily biodegradable ingredients and low VOC content."
+    },
+    {
+      "id": "laundro-oxydet",
+      "title": "LAUNDRO OXYDET Liquid Detergent + Oxygen Bleach",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Liquid detergent plus oxygen bleach for main wash cycles",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Non chlorine",
+        "All linen",
+        "Readily biodegradable"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 95,
+      "ecoScore": 133,
+      "molecule": "A combined detergent and oxygen-bleach laundry system for whites and coloureds.",
+      "compatibility": [
+        "All linen",
+        "Hospital green and white linen",
+        "Guest linen",
+        "F&B linens"
+      ],
+      "dilution": "Use in the main wash cycle at the directed dosage and temperature profile.",
+      "impact": "Supports non-chlorine laundry processing with a lower environmental footprint."
+    },
+    {
+      "id": "laundro-activ",
+      "title": "LAUNDRO ACTIV Laundro Oxydet Accelerator",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Oxydet accelerator for hospital linen cycles",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Accelerator",
+        "Acidic",
+        "Hospital linen"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 94,
+      "ecoScore": 128,
+      "molecule": "An acidic accelerator designed to be used only with the oxygen-bleach laundry system.",
+      "compatibility": [
+        "Hospital linen",
+        "White linen",
+        "All linen"
+      ],
+      "dilution": "Use only with LAUNDRO OXYDET as directed in the brochure cycle guide.",
+      "impact": "Supports a lower-temperature, higher-performance wash sequence for controlled laundry handling."
+    },
+    {
+      "id": "laundro-det-l",
+      "title": "LAUNDRO DET & L High Surf Liquid Detergent",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "High-surf liquid detergent for cotton and polycot blends",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "High surf",
+        "Mildly alkaline",
+        "No soda"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 93,
+      "ecoScore": 127,
+      "molecule": "A low-soda detergent for heavy soil loads on everyday institutional laundry.",
+      "compatibility": [
+        "All cotton",
+        "Polycot blends",
+        "Hospital linen",
+        "Guest linen"
+      ],
+      "dilution": "Use in pre-soak or final rinse workflows as indicated in the brochure guidance.",
+      "impact": "Built for better wash performance with lower alkalinity and improved rinse behavior."
+    },
+    {
+      "id": "laundro-boost-lhp-p",
+      "title": "LAUNDRO BOOST LHP & P",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Booster for detergent, bleach, and neutralizer cycles",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Booster",
+        "Low dilution",
+        "Industrial laundry"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 92,
+      "ecoScore": 125,
+      "molecule": "A cycle booster intended to support detergent, bleach, and rinse efficiency in heavier laundry workloads.",
+      "compatibility": [
+        "All linen",
+        "White cotton",
+        "Hospital laundry"
+      ],
+      "dilution": "Use at the specified 2 to 8 ml/Kg range depending on the wash stage and soil condition.",
+      "impact": "Helps improve wash performance while keeping the dosing low and controlled."
+    },
+    {
+      "id": "laundro-kleen",
+      "title": "LAUNDRO KLEEN",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Neutral bleach-cycle cleaner for green and white linen",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Stand-alone",
+        "Bleach cycle",
+        "Biodegradable"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 91,
+      "ecoScore": 123,
+      "molecule": "A neutral bleach-cycle laundry helper designed for the dedicated stand-alone step in the process.",
+      "compatibility": [
+        "Hospital green linen",
+        "White linen",
+        "All linen"
+      ],
+      "dilution": "Use in the stand-alone bleach cycle according to the temperature and dosing table.",
+      "impact": "Designed to keep the bleach cycle controlled while preserving biodegradability and rinse quality."
+    },
+    {
+      "id": "laundro-bleach-o",
+      "title": "LAUNDRO BLEACH - O Activated Powder Oxygen Bleach",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Activated powder oxygen bleach",
+      "price": 0,
+      "caseQty": "5 Kg",
+      "badges": [
+        "Non chlorine",
+        "Powder bleach",
+        "Whites and coloureds"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "drum",
+      "popularity": 90,
+      "ecoScore": 129,
+      "molecule": "An activated oxygen bleach for linen whitening without chlorine-based chemistry.",
+      "compatibility": [
+        "All linen",
+        "Hospital linen",
+        "Guest linen"
+      ],
+      "dilution": "Use at the indicated 4 to 8 gm/Kg dosage in the main wash cycle.",
+      "impact": "Supports a non-chlorine laundry system with lower chlorine residue and better environmental profile."
+    },
+    {
+      "id": "laundro-bleach-ol",
+      "title": "LAUNDRO BLEACH - OL Accelerated Liquid Oxygen Bleach",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Accelerated liquid oxygen bleach",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Non chlorine",
+        "Liquid bleach",
+        "Hospital linen"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 89,
+      "ecoScore": 130,
+      "molecule": "A liquid oxygen bleach that fits the accelerated laundry cycle for hospital and institutional linen.",
+      "compatibility": [
+        "All linen",
+        "Hospital linen",
+        "Guest linen"
+      ],
+      "dilution": "Use at the specified 2 to 6 ml/Kg dosage range depending on the wash load.",
+      "impact": "Keeps the bleach cycle chlorine free while preserving strong whitening performance."
+    },
+    {
+      "id": "laundro-mulse-e",
+      "title": "LAUNDRO MULSE E",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Hi power emulsifier with enzymes for specialty and high-stain loads",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Enzyme based",
+        "Neutral pH",
+        "High stain"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 88,
+      "ecoScore": 134,
+      "molecule": "A neutral emulsifier that breaks down protein and grease soil on F&B and specialty laundry loads.",
+      "compatibility": [
+        "F&B linen",
+        "High-stain linen",
+        "Hospital laundry",
+        "All linen"
+      ],
+      "dilution": "Use in pre-wash or main-wash cycles at the indicated 1 to 4 ml/Kg range.",
+      "impact": "Designed for biodegradable performance with a strong focus on high-soil institutional laundry."
+    },
+    {
+      "id": "laundro-mulse",
+      "title": "LAUNDRO MULSE",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Neutral laundry emulsifier for hospital green and white linen",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Neutral pH",
+        "All linen",
+        "Biodegradable"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 87,
+      "ecoScore": 122,
+      "molecule": "A neutral emulsifier for everyday institutional laundry handling and combination wash use.",
+      "compatibility": [
+        "Hospital linen",
+        "White linen",
+        "Green linen",
+        "All linen"
+      ],
+      "dilution": "Use in combination with the indicated cycle products at 2 to 6 ml/Kg.",
+      "impact": "Keeps the laundry process low-soda and low-residue for repeated washing."
+    },
+    {
+      "id": "laundro-san",
+      "title": "LAUNDRO SAN Liquid Linen Germ Fighting Rinse",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Liquid linen germ-fighting rinse",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Rinse",
+        "Hospital linen",
+        "Acidic"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 86,
+      "ecoScore": 120,
+      "molecule": "A post-wash rinse designed for hospital linen and germ-control workflows.",
+      "compatibility": [
+        "All linen",
+        "Hospital linen",
+        "Guest linen"
+      ],
+      "dilution": "Use as a standalone final-rinse product at the brochure-specified dosing level.",
+      "impact": "Supports a controlled laundry finish with lower residue and improved rinse hygiene."
+    },
+    {
+      "id": "laundro-rinse",
+      "title": "LAUNDRO RINSE Neuteralizing Liquid Rinse",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Organic-acid neutralizing liquid rinse",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Organic acid",
+        "Pleasant fragrance",
+        "Final rinse"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 85,
+      "ecoScore": 118,
+      "molecule": "A neutralizing rinse that helps close the wash cycle cleanly after detergent, bleach, or sanitizer steps.",
+      "compatibility": [
+        "All linen",
+        "White cotton",
+        "Polycot blends"
+      ],
+      "dilution": "Use at the indicated 2 to 4 ml/Kg dosage after the non-chlorine rinse cycle.",
+      "impact": "Designed to reduce residual alkalinity while keeping the rinse stage pleasant and controlled."
+    },
+    {
+      "id": "strongkleen-descalant",
+      "title": "StrongKleen Descalant & Decement",
+      "category": "Industrial",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Acidic descaling and decement chemistry",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Descalant",
+        "Decement",
+        "Acidic"
+      ],
+      "imageTone": "from-slate-100 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 84,
+      "ecoScore": 107,
+      "molecule": "An acidic maintenance cleaner for scale and cement removal on industrial surfaces.",
+      "compatibility": [
+        "Floor surfaces",
+        "Industrial equipment",
+        "Concrete"
+      ],
+      "dilution": "Use at the indicated 1:10 to RTU range, scrub, and rinse as required.",
+      "impact": "Designed to reduce scale and cement build-up without relying on harsher solvent systems."
+    },
+    {
+      "id": "florshine",
+      "title": "FLORSHINE Marble Floor Crystalizer",
+      "category": "Industrial",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Acidic marble crystallizer for floor shine",
+      "price": 0,
+      "caseQty": "RTU",
+      "badges": [
+        "Marble shine",
+        "Crystalizer",
+        "Scrub and buff"
+      ],
+      "imageTone": "from-amber-50 via-white to-slate-100",
+      "packageType": "jug",
+      "popularity": 83,
+      "ecoScore": 104,
+      "molecule": "A floor crystalizer designed for marble surfaces that need renewed gloss and hardness.",
+      "compatibility": [
+        "Marble floors",
+        "Granite floors",
+        "Polished stone"
+      ],
+      "dilution": "Apply ready to use, then scrub, rinse, and buff following the brochure guidance.",
+      "impact": "Built to improve appearance while keeping the floor care workflow straightforward."
+    },
+    {
+      "id": "florpol",
+      "title": "FLORPOL Powder Polish & Crystalizer",
+      "category": "Industrial",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Neutral pH powder polish and crystalizer",
+      "price": 0,
+      "caseQty": "5 Kg",
+      "badges": [
+        "Powder polish",
+        "VOC free",
+        "Marble care"
+      ],
+      "imageTone": "from-amber-50 via-white to-slate-100",
+      "packageType": "drum",
+      "popularity": 82,
+      "ecoScore": 103,
+      "molecule": "A neutral powder polish used to restore shine and controlled crystalization on stone floors.",
+      "compatibility": [
+        "Marble",
+        "Granite",
+        "Tiles",
+        "Stone floors"
+      ],
+      "dilution": "Use in the 2% to RTU range, then scrub and rinse according to the surface condition.",
+      "impact": "Keeps polishing chemistry simple while staying free from volatile petroleum smell."
+    },
+    {
+      "id": "h-kleen-super",
+      "title": "H-Kleen Super Hard Surface Degreaser",
+      "category": "Industrial",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Highly alkaline hard-surface degreaser",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Heavy duty",
+        "Degreaser",
+        "Scrub and rinse"
+      ],
+      "imageTone": "from-slate-100 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 81,
+      "ecoScore": 109,
+      "molecule": "A strong degreaser built for heavy surface soil on industrial and utility areas.",
+      "compatibility": [
+        "Hard surfaces",
+        "Utility areas",
+        "Shop floors"
+      ],
+      "dilution": "Use at the indicated 10% to RTU range, then scrub and rinse.",
+      "impact": "Intended for difficult grease removal while keeping the product catalog aligned to safer chemistry."
+    },
+    {
+      "id": "h-kleen-hdg",
+      "title": "H-Kleen HDg Carbon & Heavy Grease Remover",
+      "category": "Industrial",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Alkaline carbon and heavy grease remover",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Carbon removal",
+        "Heavy grease",
+        "Alkaline"
+      ],
+      "imageTone": "from-slate-100 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 80,
+      "ecoScore": 108,
+      "molecule": "An alkaline cleaner targeted at carbon deposits and stubborn grease films.",
+      "compatibility": [
+        "Machine housings",
+        "Hard surfaces",
+        "Industrial floors"
+      ],
+      "dilution": "Use at the indicated 2% to 5% range, then scrub and rinse.",
+      "impact": "Designed for tougher industrial soils without moving into harsher solvent-heavy territory."
+    },
+    {
+      "id": "alkagrease",
+      "title": "Alkagrease Heavy Duty Degreaser",
+      "category": "Industrial",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Heavy-duty alkaline degreasing chemistry",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Heavy duty",
+        "Alkaline",
+        "Rinse off"
+      ],
+      "imageTone": "from-slate-100 via-white to-emerald-100",
+      "packageType": "jug",
+      "popularity": 79,
+      "ecoScore": 106,
+      "molecule": "A concentrated degreaser for industrial and utility soils that need manual scrub action.",
+      "compatibility": [
+        "Shop floors",
+        "Industrial surfaces",
+        "Utility areas"
+      ],
+      "dilution": "Use at the 2% to 5% range based on the grease load and scrub requirement.",
+      "impact": "A focused degreasing system for demanding cleanup while keeping rinse handling clear and simple."
+    },
+    {
+      "id": "carpetkleen-hf",
+      "title": "CarpetKleen HF High Foam Shampoo",
+      "category": "Industrial",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "High-foam carpet shampoo for extraction and spotting",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "High foam",
+        "Carpet care",
+        "Spotting"
+      ],
+      "imageTone": "from-amber-50 via-white to-slate-100",
+      "packageType": "jug",
+      "popularity": 78,
+      "ecoScore": 105,
+      "molecule": "A carpet shampoo designed for use with spray extraction machines and spot cleaning.",
+      "compatibility": [
+        "Carpets",
+        "Upholstery",
+        "Spot stains"
+      ],
+      "dilution": "Use at the normal-soil or heavy-soil dilution recommended in the brochure and dry after extraction.",
+      "impact": "Supports carpet cleaning with a foaming profile and without heavy petroleum-style odor."
+    },
+    {
+      "id": "carpetkleen-lf",
+      "title": "CarpetKleen LF Low Foam Stain Removal",
+      "category": "Industrial",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Low-foaming alkaline carpet shampoo for spray extraction machines",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Low foam",
+        "Spray extraction",
+        "Stain removal"
+      ],
+      "imageTone": "from-amber-50 via-white to-slate-100",
+      "packageType": "jug",
+      "popularity": 77,
+      "ecoScore": 104,
+      "molecule": "A low-foam carpet shampoo optimized for extraction machines and controlled spot treatment.",
+      "compatibility": [
+        "Carpets",
+        "Carpet spotting",
+        "Upholstery"
+      ],
+      "dilution": "Use at 50 to 75 ml/L for normal soiling or 100 to 150 ml/L for heavy soil.",
+      "impact": "Helps reduce moisture and foam load during carpet maintenance and drying."
+    },
+    {
+      "id": "metalex",
+      "title": "Metalex Rust Oxidiation Remover",
+      "category": "Industrial",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Acidic rust and oxidation remover",
+      "price": 0,
+      "caseQty": "RTU",
+      "badges": [
+        "Rust removal",
+        "RTU",
+        "Metal care"
+      ],
+      "imageTone": "from-slate-100 via-white to-emerald-100",
+      "packageType": "trigger",
+      "popularity": 76,
+      "ecoScore": 102,
+      "molecule": "A rust-treatment formula intended for oxidation marks and metal cleaning tasks.",
+      "compatibility": [
+        "Metal surfaces",
+        "Rust-stained items",
+        "Hard surfaces"
+      ],
+      "dilution": "Apply directly, scrub, and rinse where needed; follow the hidden-spot test guidance for sensitive surfaces.",
+      "impact": "Keeps metal restoration practical while limiting unnecessary solvent use."
+    },
+    {
+      "id": "stainex-sc",
+      "title": "Stainex-Sc Scrub Paste Hard Surface",
+      "category": "Industrial",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Scrub paste stain remover for hard surfaces",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Hard surface",
+        "Ink and graffiti",
+        "Fast acting"
+      ],
+      "imageTone": "from-slate-100 via-white to-emerald-100",
+      "packageType": "drum",
+      "popularity": 75,
+      "ecoScore": 101,
+      "molecule": "A micro-scrub paste that dissolves deposited stains using a surfactant and solvent blend.",
+      "compatibility": [
+        "Hard non-porous surfaces",
+        "Tiles",
+        "Counters",
+        "Utility areas"
+      ],
+      "dilution": "Apply directly on the stain, scrub well, and rinse. Repeated use may be required on very old stains.",
+      "impact": "Intended for difficult stain removal while preserving a controlled scrub-paste workflow."
+    },
+    {
+      "id": "stainex-g",
+      "title": "Stainex-G Oil, Grease Remover",
+      "category": "Industrial",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Neutral to alkaline oil and grease remover",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Oil remover",
+        "Spot treatment",
+        "Spray extract"
+      ],
+      "imageTone": "from-slate-100 via-white to-emerald-100",
+      "packageType": "trigger",
+      "popularity": 74,
+      "ecoScore": 100,
+      "molecule": "A spot-treatment product for greasy deposits on hard and semi-porous surfaces.",
+      "compatibility": [
+        "Hard surfaces",
+        "Wood",
+        "Leather",
+        "Multi-surface spots"
+      ],
+      "dilution": "Use at the indicated 2% to 5% range or as an external spot treatment.",
+      "impact": "Designed to reduce grease without introducing heavy petroleum odor."
+    },
+    {
+      "id": "multipol",
+      "title": "MULTIPOL Wood, Leather Multi Surface",
+      "category": "Industrial",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Wood and leather multi-surface polish",
+      "price": 0,
+      "caseQty": "RTU",
+      "badges": [
+        "Multi surface",
+        "Fast dry",
+        "Food safe"
+      ],
+      "imageTone": "from-amber-50 via-white to-slate-100",
+      "packageType": "trigger",
+      "popularity": 73,
+      "ecoScore": 99,
+      "molecule": "A polish designed for wood and leather surfaces that need quick dry and easy buffing.",
+      "compatibility": [
+        "Wood",
+        "Leather",
+        "Multi-surface areas"
+      ],
+      "dilution": "Apply as directed in the brochure, then buff or wipe to the required finish.",
+      "impact": "Built for low-odor polishing in Indian conditions with minimal petroleum smell."
+    },
+    {
+      "id": "steelpol",
+      "title": "STEELPOL Steel Polish",
+      "category": "Industrial",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Neutral pH steel polish",
+      "price": 0,
+      "caseQty": "RTU",
+      "badges": [
+        "Steel polish",
+        "No petroleum smell",
+        "Fast dry"
+      ],
+      "imageTone": "from-slate-100 via-white to-emerald-100",
+      "packageType": "trigger",
+      "popularity": 72,
+      "ecoScore": 98,
+      "molecule": "A neutral polish for stainless steel and related metal surfaces that need a clean, fast-dry finish.",
+      "compatibility": [
+        "Steel",
+        "Stainless steel",
+        "Metal trims"
+      ],
+      "dilution": "Apply ready to use, then wipe and buff to the desired finish.",
+      "impact": "Designed to keep metal polishing easy without a petroleum-style smell."
+    },
+    {
+      "id": "apc-f-green",
+      "title": "APC-F Green Multipurpose Floor & Hard Surface Cleaner",
+      "category": "Hospital",
+      "application": [
+        "Manual",
+        "Surface"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Benzalkonium Chloride 3% w/v with food-safe surfactants and chelates",
+      "price": 0,
+      "caseQty": "5 L",
+      "badges": [
+        "Neutral pH",
+        "Low VOC",
+        "Bioassay tested"
+      ],
+      "imageTone": "from-emerald-50 via-white to-teal-100",
+      "packageType": "trigger",
+      "popularity": 99,
+      "ecoScore": 132,
+      "molecule": "Benzalkonium chloride and neutral surfactants lift soil while keeping the formula safe for spray, mop, and machine scrub use.",
+      "compatibility": [
+        "Marble",
+        "Wood",
+        "Glass",
+        "Steel",
+        "Laminate",
+        "Plastic"
+      ],
+      "dilution": "Dilution: 1:100 to 1:50, or 1% to 2% (10 ml/ltr to 20 ml/ltr) depending on soil load. Spray and wipe, mop, or machine scrub.",
+      "impact": "Readily biodegradable formula free from NPE, caustic, EDTA, phosphate, and synthetic solvents; designed for safer effluent and aquatic life."
+    }
+  ]
+}

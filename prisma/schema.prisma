@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Product {
+  id             String   @id
+  title          String
+  category       String
+  application    String[]
+  certifications String[]
+  active         String
+  price          Float
+  caseQty        String
+  badges         String[]
+  imageTone      String
+  packageType    String
+  popularity     Float
+  ecoScore       Float
+  molecule       String
+  compatibility  String[]
+  dilution       String
+  impact         String
+  imageUrl       String?
+}
+
+model SiteText {
+  id    String @id @default("global")
+  value Json
+}
