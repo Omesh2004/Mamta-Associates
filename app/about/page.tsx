@@ -62,7 +62,7 @@ export default function AboutPage() {
               </svg>
             </div>
             <p className="text-2xl font-medium leading-relaxed tracking-tight text-slate-900 dark:text-white sm:text-4xl">
-              "Our vision was never just about cleaning better. It was about creating a sustainable future where industrial efficiency and environmental responsibility go hand in hand."
+              Our vision was never just about cleaning better. It was about creating a sustainable future where industrial efficiency and environmental responsibility go hand in hand.
             </p>
             <div className="mt-10 flex items-center justify-center gap-4">
               <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-emerald-500" />
@@ -94,7 +94,7 @@ export default function AboutPage() {
                   Since 2002, Mamta Associates has been built on a singular vision: providing industrial and commercial facilities with cleaning technology that performs without compromise.
                 </p>
                 <p>
-                  We recognized early on that true efficiency doesn't come from taking shortcuts. It comes from advanced green chemistry, rigorous testing, and a deep understanding of real-world operational challenges.
+                  We recognized early on that true efficiency does not come from taking shortcuts. It comes from advanced green chemistry, rigorous testing, and a deep understanding of real-world operational challenges.
                 </p>
                 <p className="border-l-2 border-emerald-500/50 pl-4 font-medium text-slate-800 dark:text-slate-200">
                   Today, as a leading provider of GreenPro certified cleaning chemicals, our commitment remains unchanged. We deliver hospital-grade disinfection, food-safe hygiene, and industrial-strength cleaning while protecting our people, our water bodies, and our planet.

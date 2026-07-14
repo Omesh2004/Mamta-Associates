@@ -674,7 +674,7 @@ export function LandingPage() {
                   Since 2003, Mamta Associates has been built on a singular vision: providing industrial and commercial facilities with cleaning technology that performs without compromise. 
                 </p>
                 <p>
-                  We recognized early on that true efficiency doesn't come from taking shortcuts. It comes from advanced green chemistry, rigorous testing, and a deep understanding of real-world operational challenges.
+                  We recognized early on that true efficiency does not come from taking shortcuts. It comes from advanced green chemistry, rigorous testing, and a deep understanding of real-world operational challenges.
                 </p>
                 <p>
                   Today, as a leading provider of GreenPro certified cleaning chemicals, our commitment remains unchanged. We deliver hospital-grade disinfection, food-safe hygiene, and industrial strength cleaning while protecting our people, our water bodies, and our planet.
