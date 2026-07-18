@@ -728,30 +728,6 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <footer className="border-t border-emerald-100 dark:border-white/10 bg-white dark:bg-slate-950/80 py-10 px-5 sm:px-8 transition-colors duration-500 backdrop-blur-md">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-            <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-forest dark:bg-white/10 text-white">
-                <Leaf className="h-5 w-5 text-white dark:text-emerald-400" />
-              </div>
-              <div>
-                <p className="text-sm font-bold text-slate-900 dark:text-white">{brandText.name}</p>
-                <p className="text-xs text-slate-500 dark:text-slate-400">{brandText.tagline}</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500 dark:text-slate-400">
-              <span className="flex items-center gap-1.5"><Phone className="h-4 w-4 text-canopy dark:text-emerald-400" /> {homeText.phone}</span>
-              <span className="flex items-center gap-1.5"><Mail className="h-4 w-4 text-canopy dark:text-emerald-400" /> {homeText.email}</span>
-              <span className="flex items-center gap-1.5"><Factory className="h-4 w-4 text-canopy dark:text-emerald-400" /> {homeText.location}</span>
-            </div>
-          </div>
-          <div className="mt-8 border-t border-slate-100 dark:border-white/10 pt-6 text-center text-xs text-slate-400 dark:text-slate-500">
-            © {new Date().getFullYear()} {content.siteText.catalog.footer}
-          </div>
-        </div>
-      </footer>
       <FAQChatbot />
     </main>
   );

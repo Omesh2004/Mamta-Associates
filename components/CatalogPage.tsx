@@ -89,12 +89,6 @@ export function CatalogPage() {
       {/* ── CATALOG ── */}
       <ProductCatalog />
 
-      {/* ── FOOTER ── */}
-      <footer className="border-t border-emerald-100 bg-white py-8 px-5 sm:px-8">
-        <div className="mx-auto max-w-7xl text-center text-xs text-slate-400">
-          © {new Date().getFullYear()} {catalogText.footer}
-        </div>
-      </footer>
     </main>
   );
 }

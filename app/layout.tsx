@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { AuthProvider } from "@/components/AuthProvider";
+import { Footer } from "@/components/Footer";
 
 import { ThemeProvider } from "@/components/ThemeProvider";
 
@@ -25,6 +26,7 @@ export default function RootLayout({
             <SmoothScroll>
               <Navbar />
               {children}
+              <Footer />
             </SmoothScroll>
           </ThemeProvider>
         </AuthProvider>

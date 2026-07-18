@@ -228,13 +228,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <footer className="relative border-t border-slate-200 dark:border-white/10 bg-slate-50/80 dark:bg-slate-950/80 py-12 px-5 sm:px-8 mt-auto backdrop-blur-lg transition-colors duration-500">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-xs text-slate-600 dark:text-slate-500 sm:flex-row">
-          <p>© {new Date().getFullYear()} Mamta Associates. All rights reserved.</p>
-          <p className="flex items-center gap-1">Powered by <span className="text-emerald-600 dark:text-emerald-500/80 font-medium">Haylide Green Cleaning Technology</span></p>
-        </div>
-      </footer>
     </main>
   );
 }
