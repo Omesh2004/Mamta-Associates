@@ -11,6 +11,7 @@ import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
 import { products } from "@/lib/products";
 import { FAQChatbot } from "./FAQChatbot";
+import { ClientsSection } from "./ClientsSection";
 
 const CORE_VALUES = [
   {
@@ -41,7 +42,7 @@ const CORE_VALUES = [
 ];
 
 const STATS = [
-  { value: "45+", label: "Years of Innovation", icon: Award },
+  { value: "23+", label: "Years of Innovation", icon: Award },
   { value: "100%", label: "Biodegradable Formulas", icon: Recycle },
   { value: "6", label: "Product Categories", icon: FlaskConical },
   { value: "Zero", label: "VOC Emissions", icon: Droplets }
@@ -550,6 +551,8 @@ export function LandingPage() {
           </div>
         </div>
       </section>
+
+      <ClientsSection />
 
       {/* ── FEATURES ── */}
       <section id="features" className="bg-white dark:bg-transparent py-16 px-5 sm:px-8 transition-colors duration-500">
