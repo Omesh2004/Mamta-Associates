@@ -15,10 +15,10 @@ export function ProductVisual({ product, large = false }: ProductVisualProps) {
   const productImage = product.imageUrl;
 
   return (
-    <div className={`relative flex ${height} items-center justify-center overflow-hidden rounded-md bg-gradient-to-br ${product.imageTone} shadow-inner`}>
+    <div className={`relative flex ${height} items-center justify-center overflow-hidden rounded-md bg-white shadow-inner`}>
       {productImage ? (
         <>
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.35),transparent_45%,rgba(15,23,42,0.05))]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02),transparent_45%,rgba(15,23,42,0.02))]" />
           <div className="relative z-10 flex h-full w-full items-center justify-center p-2">
             <Image
               src={productImage}

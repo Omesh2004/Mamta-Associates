@@ -367,11 +367,10 @@ function ProductCard({
           <span className="text-xs font-semibold text-slate-500">4.5 · {product.popularity} orders</span>
         </div>
 
-        {/* cert badges */}
         <div className="flex flex-wrap gap-1.5">
           {product.badges.slice(0, 3).map((badge) => (
-            <span key={badge} className="inline-flex items-center gap-1 rounded-lg border border-emerald-100 bg-lime-50 px-2 py-1 text-[11px] font-semibold text-forest">
-              <ShieldCheck className="h-3 w-3 text-mint" />
+            <span key={badge} className="inline-flex items-center gap-1 rounded-lg border border-emerald-400 dark:border-emerald-500/50 bg-white dark:bg-white/5 px-2 py-1 text-[11px] font-semibold text-forest dark:text-emerald-300">
+              <ShieldCheck className="h-3 w-3 text-emerald-500 dark:text-emerald-400" />
               {badge}
             </span>
           ))}

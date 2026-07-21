@@ -39,8 +39,8 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <Factory className="h-4 w-4 text-emerald-600 dark:text-emerald-500 shrink-0 mt-0.5" />
                 <div>
-                  <p>Registered Office & Manufacturing:</p>
-                  <p className="text-slate-500 dark:text-slate-500">[Insert Full Registered Address Here], India</p>
+                  <p>Registered Office:</p>
+                  <p className="text-slate-500 dark:text-slate-500">Shop no 4, 7 Khudiram Bose Sarani,<br />Opposite Royal Government of Bhutan Consulate,<br />Kolkata 700080</p>
                 </div>
               </div>
             </div>
@@ -67,7 +67,7 @@ export function Footer() {
             </ul>
             <div className="mt-6 p-4 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10">
               <p className="text-xs text-slate-500 dark:text-slate-400">
-                <strong>LLPIN / CIN:</strong> [Insert Reg. Number]
+                <strong>GST:</strong> 19AFVPM5018E1Z5
               </p>
             </div>
           </div>

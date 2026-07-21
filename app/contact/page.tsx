@@ -127,12 +127,23 @@ export default function ContactPage() {
 
                 <div className="group flex items-start gap-6 transition-all hover:-translate-y-1">
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-emerald-50 dark:bg-gradient-to-br dark:from-emerald-400/20 dark:to-teal-500/20 text-emerald-600 dark:text-emerald-400 ring-1 ring-inset ring-emerald-500/20 transition-transform group-hover:scale-110">
+                    <MapPin className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Registered Office</p>
+                    <p className="mt-1 text-lg font-medium text-slate-900 dark:text-white transition-colors group-hover:text-emerald-600 dark:group-hover:text-emerald-300">Shop no 4, 7 Khudiram Bose Sarani</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Opposite Royal Government of Bhutan Consulate<br />Kolkata 700080</p>
+                  </div>
+                </div>
+
+                <div className="group flex items-start gap-6 transition-all hover:-translate-y-1">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-emerald-50 dark:bg-gradient-to-br dark:from-emerald-400/20 dark:to-teal-500/20 text-emerald-600 dark:text-emerald-400 ring-1 ring-inset ring-emerald-500/20 transition-transform group-hover:scale-110">
                     <Factory className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Manufacturing</p>
+                    <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Manufacturing & Registration</p>
                     <p className="mt-1 text-xl font-medium text-slate-900 dark:text-white transition-colors group-hover:text-emerald-600 dark:group-hover:text-emerald-300">WHO-GMP Compliant Facility</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">India</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">GST: 19AFVPM5018E1Z5</p>
                   </div>
                 </div>
               </div>
