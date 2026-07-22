@@ -4,15 +4,19 @@ import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import {
+  ChevronDown,
   FileJson,
   FileText,
+  Filter,
   LayoutDashboard,
   Loader2,
   LogOut,
   Plus,
   Save,
   Trash2,
-  Pencil
+  Pencil,
+  Search,
+  X
 } from "lucide-react";
 import {
   applications,
@@ -34,6 +38,8 @@ type Message = {
   message: string;
   createdAt: string;
 };
+
+type AdminSortMode = "Title A-Z" | "Category" | "Price Low to High" | "Price High to Low" | "Popularity" | "Eco Score";
 
 type ProductForm = Omit<Product, "application" | "certifications" | "badges" | "compatibility"> & {
   application: string;
@@ -111,6 +117,11 @@ export default function AdminPage() {
   const router = useRouter();
   const [content, setContent] = useState<SiteContent | null>(null);
   const [jsonDraft, setJsonDraft] = useState("");
+  const [sortMode, setSortMode] = useState<AdminSortMode>("Title A-Z");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedApplications, setSelectedApplications] = useState<string[]>([]);
+  const [selectedCertifications, setSelectedCertifications] = useState<string[]>([]);
   const [productForm, setProductForm] = useState<ProductForm>(defaultProductForm);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -155,6 +166,56 @@ export default function AdminPage() {
     if (!content) return 0;
     return new Set(content.products.map((product) => product.category)).size;
   }, [content]);
+
+  const sortedProducts = useMemo(() => {
+    if (!content) return [];
+
+    const filteredProducts = content.products.filter((product) => {
+      const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.category);
+      const matchesApplication =
+        selectedApplications.length === 0 ||
+        selectedApplications.some((item) => product.application.includes(item as Product["application"][number]));
+      const matchesCertification =
+        selectedCertifications.length === 0 ||
+        selectedCertifications.some((item) => product.certifications.includes(item as Product["certifications"][number]));
+      
+      const haystack = `${product.title} ${product.active} ${product.category} ${product.id} ${product.badges.join(" ")}`.toLowerCase();
+      const matchesSearch = haystack.includes(searchQuery.toLowerCase());
+
+      return matchesCategory && matchesApplication && matchesCertification && matchesSearch;
+    });
+
+    return filteredProducts.sort((left, right) => {
+      switch (sortMode) {
+        case "Category":
+          return left.category.localeCompare(right.category) || left.title.localeCompare(right.title);
+        case "Price Low to High":
+          return left.price - right.price || left.title.localeCompare(right.title);
+        case "Price High to Low":
+          return right.price - left.price || left.title.localeCompare(right.title);
+        case "Popularity":
+          return right.popularity - left.popularity || left.title.localeCompare(right.title);
+        case "Eco Score":
+          return right.ecoScore - left.ecoScore || left.title.localeCompare(right.title);
+        case "Title A-Z":
+        default:
+          return left.title.localeCompare(right.title);
+      }
+    });
+  }, [content, searchQuery, selectedApplications, selectedCategories, selectedCertifications, sortMode]);
+
+  const activeFiltersCount = selectedCategories.length + selectedApplications.length + selectedCertifications.length;
+
+  function toggleFilter(value: string, setter: (next: string[]) => void, current: string[]) {
+    setter(current.includes(value) ? current.filter((item) => item !== value) : [...current, value]);
+  }
+
+  function clearAllFilters() {
+    setSelectedCategories([]);
+    setSelectedApplications([]);
+    setSelectedCertifications([]);
+    setSearchQuery("");
+  }
 
   async function saveContent(nextContent: SiteContent) {
     setIsSaving(true);
@@ -443,47 +504,160 @@ export default function AdminPage() {
             </section>
 
             <section className="rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/50 shadow-sm lg:col-span-2 transition-colors duration-500">
-              <div className="border-b border-slate-200 dark:border-white/10 px-6 py-4">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Current Catalog Items</h3>
+              <div className="flex flex-col gap-4 border-b border-slate-200 dark:border-white/10 px-6 py-4 lg:flex-row lg:items-center lg:justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Current Catalog Items</h3>
+                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Sort the admin list by title, category, price, popularity, or eco score.</p>
+                </div>
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center w-full lg:w-auto">
+                  <div className="relative flex-1 sm:w-60">
+                    <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <input
+                      className="h-11 w-full rounded-md border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 pl-10 pr-9 text-sm outline-none transition-all text-slate-900 dark:text-white placeholder:text-slate-400 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 dark:focus:ring-emerald-500/20"
+                      placeholder="Search items..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                    {searchQuery && (
+                      <button
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                        onClick={() => setSearchQuery("")}
+                      >
+                        <X className="h-4 w-4" />
+                      </button>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-3 shrink-0">
+                    <label className="text-sm font-semibold text-slate-700 dark:text-slate-300" htmlFor="admin-sort-mode">
+                      Sort by
+                    </label>
+                    <select
+                      id="admin-sort-mode"
+                      value={sortMode}
+                      onChange={(event) => setSortMode(event.target.value as AdminSortMode)}
+                      className="h-11 rounded-md border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 px-3 text-sm font-semibold text-slate-700 dark:text-slate-300 outline-none transition focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 dark:focus:ring-emerald-500/20"
+                    >
+                      <option>Title A-Z</option>
+                      <option>Category</option>
+                      <option>Price Low to High</option>
+                      <option>Price High to Low</option>
+                      <option>Popularity</option>
+                      <option>Eco Score</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 overflow-x-auto border-b border-slate-100 dark:border-white/10 bg-slate-50/60 dark:bg-transparent px-6 py-3 scrollbar-hide">
+                <span className="flex shrink-0 items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-slate-400">
+                  <Filter className="h-3.5 w-3.5" />
+                  Filters
+                </span>
+                <div className="mx-2 h-4 w-px shrink-0 bg-slate-200" />
+                {categories.map((category) => (
+                  <FilterChip
+                    key={category}
+                    label={category}
+                    active={selectedCategories.includes(category)}
+                    onToggle={() => toggleFilter(category, setSelectedCategories, selectedCategories)}
+                  />
+                ))}
+                <div className="mx-1 h-4 w-px shrink-0 bg-slate-200" />
+                {applications.map((application) => (
+                  <FilterChip
+                    key={application}
+                    label={application}
+                    active={selectedApplications.includes(application)}
+                    onToggle={() => toggleFilter(application, setSelectedApplications, selectedApplications)}
+                  />
+                ))}
+                <div className="mx-1 h-4 w-px shrink-0 bg-slate-200" />
+                {certifications.map((certification) => (
+                  <FilterChip
+                    key={certification}
+                    label={certification}
+                    active={selectedCertifications.includes(certification)}
+                    onToggle={() => toggleFilter(certification, setSelectedCertifications, selectedCertifications)}
+                  />
+                ))}
+                {activeFiltersCount > 0 && (
+                  <button
+                    className="ml-2 shrink-0 rounded-lg px-3 py-1.5 text-xs font-semibold text-rose-500 transition hover:bg-rose-50"
+                    onClick={clearAllFilters}
+                  >
+                    Clear all
+                  </button>
+                )}
               </div>
               <div className="divide-y divide-slate-100 dark:divide-white/5">
-                {content.products.map((product) => (
-                  <div key={product.id} className="flex flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
-                    <div>
-                      <p className="font-semibold text-slate-900 dark:text-white">{product.title}</p>
-                      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                        {product.category} · {product.active} · ₹{product.price}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <button
-                        onClick={() => {
-                          setProductForm(formFromProduct(product));
-                          window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }}
-                        disabled={isSaving}
-                        className="inline-flex w-fit items-center gap-2 rounded-md border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-3 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 transition hover:bg-slate-100 dark:hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-60"
-                      >
-                        <Pencil className="h-4 w-4" />
-                        Edit
-                      </button>
-                      <button
-                        onClick={() => deleteProduct(product.id)}
-                        disabled={isSaving}
-                        className="inline-flex w-fit items-center gap-2 rounded-md border border-rose-200 dark:border-rose-500/20 bg-rose-50 dark:bg-rose-500/10 px-3 py-2 text-sm font-semibold text-rose-600 dark:text-rose-400 transition hover:bg-rose-100 dark:hover:bg-rose-500/20 disabled:cursor-not-allowed disabled:opacity-60"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                        Delete
-                      </button>
-                    </div>
+                {sortedProducts.length === 0 ? (
+                  <div className="p-8 text-center text-sm text-slate-500 dark:text-slate-400">
+                    <Search className="mx-auto mb-3 h-8 w-8 text-slate-300 dark:text-slate-700" />
+                    <p className="font-semibold text-slate-700 dark:text-slate-300">No matching products found</p>
+                    <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">Try adjusting your search or filters.</p>
                   </div>
-                ))}
+                ) : (
+                  sortedProducts.map((product) => (
+                    <div key={product.id} className="flex flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <p className="font-semibold text-slate-900 dark:text-white">{product.title}</p>
+                        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                          {product.category} · {product.active}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => {
+                            setProductForm(formFromProduct(product));
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }}
+                          disabled={isSaving}
+                          className="inline-flex w-fit items-center gap-2 rounded-md border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-3 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 transition hover:bg-slate-100 dark:hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-60"
+                        >
+                          <Pencil className="h-4 w-4" />
+                          Edit
+                        </button>
+                        <button
+                          onClick={() => deleteProduct(product.id)}
+                          disabled={isSaving}
+                          className="inline-flex w-fit items-center gap-2 rounded-md border border-rose-200 dark:border-rose-500/20 bg-rose-50 dark:bg-rose-500/10 px-3 py-2 text-sm font-semibold text-rose-600 dark:text-rose-400 transition hover:bg-rose-100 dark:hover:bg-rose-500/20 disabled:cursor-not-allowed disabled:opacity-60"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
             </section>
           </div>
         )}
       </main>
     </div>
+  );
+}
+
+function FilterChip({
+  label,
+  active,
+  onToggle
+}: {
+  label: string;
+  active: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <button
+      onClick={onToggle}
+      className={`inline-flex shrink-0 items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-semibold transition-all ${
+        active
+          ? "border-emerald-500 bg-emerald-500 text-white shadow-sm shadow-emerald-200 dark:shadow-none"
+          : "border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 text-slate-600 dark:text-slate-300 hover:border-emerald-300 dark:hover:border-white/30 hover:text-emerald-700 dark:hover:text-white"
+      }`}
+    >
+      {active && <X className="h-3 w-3" />}
+      {label}
+    </button>
   );
 }
 

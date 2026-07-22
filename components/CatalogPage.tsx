@@ -5,6 +5,7 @@ import { ArrowLeft, Leaf, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ProductCatalog } from "./ProductCatalog";
+import { WashingCycles } from "./WashingCycles";
 
 export function CatalogPage() {
   const [catalogText, setCatalogText] = useState({
@@ -88,6 +89,8 @@ export function CatalogPage() {
 
       {/* ── CATALOG ── */}
       <ProductCatalog />
+
+      <WashingCycles />
 
     </main>
   );

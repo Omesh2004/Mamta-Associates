@@ -801,7 +801,7 @@
     },
     {
       "id": "laundro-mulse-e-super",
-      "title": "LAUNDRO MULSE E & SUPER",
+      "title": "LAUNDRO MULSE Super Enzyme Regular Non Ionic Booster",
       "category": "Laundry",
       "application": [
         "Manual"
@@ -809,27 +809,30 @@
       "certifications": [
         "GreenPro"
       ],
-      "active": "Hi power emulsifier with enzymes",
+      "active": "Regular Non Ionic Booster with Enzymes (Neutral Alkalinity)",
       "price": 0,
       "caseQty": "5 L",
       "badges": [
-        "Enzyme boosted",
-        "Biodegradable",
-        "Hospital linen"
+        "Enzyme Boosted",
+        "Neutral pH",
+        "Non Ionic",
+        "Extra Dirty Linen"
       ],
       "imageTone": "from-lime-50 via-white to-emerald-100",
       "packageType": "jug",
-      "popularity": 96,
+      "popularity": 94,
       "ecoScore": 135,
-      "molecule": "A neutral laundry emulsifier that uses enzymes to break down protein and grease soils in the main wash.",
+      "molecule": "A neutral non-ionic emulsifier boosted with high-activity enzymes for extra dirty and greasy linen.",
       "compatibility": [
-        "Hospital linen",
-        "F&B linen",
+        "All Extra Dirty Linen",
+        "Greasy Linen",
+        "F&B Linen",
         "Towels",
         "Uniforms"
       ],
-      "dilution": "Use at 4 to 8 ml/Kg in the main wash cycle, following the indicated temperature range.",
-      "impact": "High-performance laundry chemistry with readily biodegradable ingredients and low VOC content."
+      "dilution": "Dosage: 2–4 ml/Kg Dry Load | Cycle: 15–25 mins | Temp: 30 to 90 Deg. C | Compatible: Laundro Shot, Det, Excel, Complete, Kleen, Det-L (Also Bleach-O & Chlor)",
+      "impact": "Dual enzyme and surfactant action breaks down tough protein stains and complex grease loads.",
+      "imageUrl": "/images/INDUSTRIAL%20LAUNDRY%20RANGE.jpeg"
     },
     {
       "id": "laundro-oxydet",
@@ -1052,7 +1055,7 @@
     },
     {
       "id": "laundro-mulse-e",
-      "title": "LAUNDRO MULSE E",
+      "title": "LAUNDRO MULSE - E Speciality Non Ionic Booster",
       "category": "Laundry",
       "application": [
         "Manual"
@@ -1060,27 +1063,28 @@
       "certifications": [
         "GreenPro"
       ],
-      "active": "Hi power emulsifier with enzymes for specialty and high-stain loads",
+      "active": "Speciality Non Ionic Booster (Neutral Alkalinity)",
       "price": 0,
       "caseQty": "5 L",
       "badges": [
-        "Enzyme based",
+        "Speciality Booster",
         "Neutral pH",
-        "High stain"
+        "Non Ionic",
+        "F&B & Greasy Linen"
       ],
       "imageTone": "from-lime-50 via-white to-emerald-100",
       "packageType": "jug",
       "popularity": 88,
       "ecoScore": 134,
-      "molecule": "A neutral emulsifier that breaks down protein and grease soil on F&B and specialty laundry loads.",
+      "molecule": "A neutral-pH speciality non-ionic liquid emulsifier and booster engineered for F&B and greasy industrial linen.",
       "compatibility": [
-        "F&B linen",
-        "High-stain linen",
-        "Hospital laundry",
-        "All linen"
+        "F&B Linen",
+        "Greasy Industrial Linen",
+        "All Linen"
       ],
-      "dilution": "Use in pre-wash or main-wash cycles at the indicated 1 to 4 ml/Kg range.",
-      "impact": "Designed for biodegradable performance with a strong focus on high-soil institutional laundry."
+      "dilution": "Dosage: 2–6 ml/Kg Dry Load | Cycle: 15–25 mins | Temp: 30 to 90 Deg. C | Compatible: Laundro Shot, Det, Excel, Complete, Kleen, Det-L (Also Bleach-O & Chlor)",
+      "impact": "High-efficiency grease removal and emulsification across 30–90°C without altering wash pH.",
+      "imageUrl": "/images/INDUSTRIAL%20LAUNDRY%20RANGE.jpeg"
     },
     {
       "id": "laundro-mulse",
@@ -1625,6 +1629,142 @@
       ],
       "dilution": "Dilution: 1:100 to 1:50, or 1% to 2% (10 ml/ltr to 20 ml/ltr) depending on soil load. Spray and wipe, mop, or machine scrub.",
       "impact": "Readily biodegradable formula free from NPE, caustic, EDTA, phosphate, and synthetic solvents; designed for safer effluent and aquatic life."
+    },
+    {
+      "id": "laundro-det",
+      "title": "LAUNDRO DET Powder Detergent & Booster",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Powder Detergent & Booster (Medium High Alkalinity - Caustic Free)",
+      "price": 0,
+      "caseQty": "25 Kg",
+      "badges": [
+        "Powder Detergent",
+        "Caustic Free",
+        "Medium High Alkalinity"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "drum",
+      "popularity": 94,
+      "ecoScore": 128,
+      "molecule": "A medium-high alkalinity caustic-free powder detergent and booster for generic institutional laundry.",
+      "compatibility": [
+        "All Generic Laundry",
+        "Linen",
+        "Towels",
+        "F&B",
+        "Uniforms"
+      ],
+      "dilution": "Dosage: 4–6 gms/Kg Dry Load | Cycle: 15–25 mins | Temp: 30 to 90 Deg. C | Compatible: Same Cycle (Laundro Mulse E & Super, Laundro Bleach-O)",
+      "impact": "Delivers powerful detergency and alkalinity boost without caustic soda, preserving linen life.",
+      "imageUrl": "/images/POWDER-%20DETERGENT.jpeg"
+    },
+    {
+      "id": "laundro-det-ec",
+      "title": "LAUNDRO DET - EC Economic Powder Detergent & Booster",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "Economic Powder Detergent & Booster (High Alkalinity)",
+      "price": 0,
+      "caseQty": "25 Kg",
+      "badges": [
+        "Economic",
+        "High Alkalinity",
+        "Tough Linen"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "drum",
+      "popularity": 92,
+      "ecoScore": 124,
+      "molecule": "An economical high-alkalinity powder detergent and booster designed for heavy soil removal on tough institutional linen.",
+      "compatibility": [
+        "Tough Linen",
+        "Linen",
+        "Towels",
+        "F&B",
+        "Uniforms"
+      ],
+      "dilution": "Dosage: 4–6 gms/Kg Dry Load | Cycle: 15–25 mins | Temp: 30 to 90 Deg. C | Compatible: Same Cycle (Laundro Mulse E & Super, Laundro Bleach-O)",
+      "impact": "High efficiency soil saponification for tough industrial and institutional linen.",
+      "imageUrl": "/images/POWDER-%20DETERGENT.jpeg"
+    },
+    {
+      "id": "laundro-complete",
+      "title": "LAUNDRO COMPLETE All-in-One Sensitive Oxy Detergent",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "All-in-One Sensitive Oxy Detergent (Low Alkalinity - No Soda)",
+      "price": 0,
+      "caseQty": "25 Kg",
+      "badges": [
+        "All-in-One",
+        "No Soda",
+        "Sensitive Oxy Bleach"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "drum",
+      "popularity": 95,
+      "ecoScore": 132,
+      "molecule": "An all-in-one sensitive oxygen bleach powder detergent formulated without soda ash for high-end laundry.",
+      "compatibility": [
+        "High End Laundry",
+        "Linen",
+        "Towels",
+        "F&B",
+        "Uniforms"
+      ],
+      "dilution": "Dosage: 4–5 gms/Kg Dry Load | Cycle: 15–20 mins | Temp: 40 to 60 Deg. C | Compatible: Same Cycle (Laundro Mulse E & Super)",
+      "impact": "Combines gentle detersive action and oxygen bleaching with zero soda ash to maximize fabric longevity.",
+      "imageUrl": "/images/POWDER-%20DETERGENT.jpeg"
+    },
+    {
+      "id": "laundro-excel",
+      "title": "LAUNDRO EXCEL All-in-One Powerful Oxy Detergent",
+      "category": "Laundry",
+      "application": [
+        "Manual"
+      ],
+      "certifications": [
+        "GreenPro"
+      ],
+      "active": "All-in-One Powerful Oxy Detergent (Medium Alkalinity - Caustic Free)",
+      "price": 0,
+      "caseQty": "25 Kg",
+      "badges": [
+        "All-in-One",
+        "Caustic Free",
+        "Powerful Oxy Bleach"
+      ],
+      "imageTone": "from-lime-50 via-white to-emerald-100",
+      "packageType": "drum",
+      "popularity": 96,
+      "ecoScore": 130,
+      "molecule": "A powerful all-in-one detergent + active oxygen bleach formulation with medium caustic-free alkalinity.",
+      "compatibility": [
+        "High End Laundry",
+        "Linen",
+        "Towels",
+        "F&B",
+        "Uniforms"
+      ],
+      "dilution": "Dosage: 4–5 gms/Kg Dry Load | Cycle: 15–20 mins | Temp: 40 to 60 Deg. C | Compatible: Same Cycle (Laundro Mulse E & Super)",
+      "impact": "Provides single-stage heavy soil cleaning and color-safe oxygen whitening in one operation.",
+      "imageUrl": "/images/POWDER-%20DETERGENT.jpeg"
     }
   ]
 }

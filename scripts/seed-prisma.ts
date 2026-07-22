@@ -43,8 +43,9 @@ function getProductImagePath(product: any): string | null {
   if (exact) return `/images/${encodeURIComponent(exact)}`;
 
   if (product.id.startsWith("laundro-")) {
-    if (product.id === "laundro-bleach-o") return `/images/${encodeURIComponent("POWDER- DETERGENT.jpeg")}`;
-    if (product.id === "laundro-bleach-ol") return `/images/${encodeURIComponent("LAUNDRO- DETERGENT.jpeg")}`;
+    if (product.id.includes("det") && !product.id.includes("laundro-det-l")) return `/images/${encodeURIComponent("POWDER- DETERGENT.jpeg")}`;
+    if (product.id === "laundro-complete" || product.id === "laundro-excel" || product.id === "laundro-bleach-o") return `/images/${encodeURIComponent("POWDER- DETERGENT.jpeg")}`;
+    if (product.id === "laundro-bleach-ol" || product.id === "laundro-det-l") return `/images/${encodeURIComponent("LAUNDRO- DETERGENT.jpeg")}`;
     return `/images/${encodeURIComponent("INDUSTRIAL LAUNDRY RANGE.jpeg")}`;
   }
 
@@ -68,7 +69,7 @@ async function main() {
   await prisma.product.deleteMany({})
 
   for (const product of data.products) {
-    const imageUrl = getProductImagePath(product);
+    const imageUrl = product.imageUrl || getProductImagePath(product);
     await prisma.product.create({
       data: {
         id: product.id,
