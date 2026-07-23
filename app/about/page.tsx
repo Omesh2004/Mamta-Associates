@@ -39,7 +39,7 @@ export default function AboutPage() {
               About <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400 dark:from-emerald-400 dark:to-teal-200">Mamta Associates</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600 dark:text-slate-300 sm:text-xl">
-              Pioneering Green Cleaning Technology in India for over 22 years. We engineer uncompromising performance with globally certified safety standards.
+              Pioneering Green Cleaning Technology in India for over 25 years. We engineer uncompromising performance with globally certified safety standards.
             </p>
           </motion.div>
         </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
               </h2>
               <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
                 <p>
-                  Since 2002, Mamta Associates has been built on a singular vision: providing industrial and commercial facilities with cleaning technology that performs without compromise.
+                  Since 2001, Mamta Associates has been built on a singular vision: providing industrial and commercial facilities with cleaning technology that performs without compromise.
                 </p>
                 <p>
                   We recognized early on that true efficiency does not come from taking shortcuts. It comes from advanced green chemistry, rigorous testing, and a deep understanding of real-world operational challenges.

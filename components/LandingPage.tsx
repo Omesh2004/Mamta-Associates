@@ -42,7 +42,7 @@ const CORE_VALUES = [
 ];
 
 const STATS = [
-  { value: "23+", label: "Years of Innovation", icon: Award },
+  { value: "25+", label: "Years of Innovation", icon: Award },
   { value: "100%", label: "Biodegradable Formulas", icon: Recycle },
   { value: "6", label: "Product Categories", icon: FlaskConical },
   { value: "Zero", label: "VOC Emissions", icon: Droplets }
@@ -439,7 +439,7 @@ export function LandingPage() {
                 className="flex-1 rounded-xl border border-slate-200 dark:border-white/10 bg-forest dark:bg-slate-900/50 p-6 shadow-sm flex flex-col justify-center text-white backdrop-blur-sm"
               >
                 <Award className="h-8 w-8 text-emerald-300 dark:text-emerald-400 mb-4" />
-                <p className="text-3xl font-bold tracking-tight">22+ Years</p>
+                <p className="text-3xl font-bold tracking-tight">25+ Years</p>
                 <p className="mt-2 text-sm text-emerald-100/90 dark:text-slate-300 leading-relaxed">
                   Of uncompromising quality and GreenPro certified chemical engineering.
                 </p>
